@@ -29,11 +29,11 @@ interface ConcertProps {
 
 const Concert = ({ concert }: ConcertProps) => {
 	const { date, location, program } = concert
-
+	const formattedDate = new Date(date).toLocaleDateString('en-US', { day: 'numeric', month: 'short' })
 	return (
 		<ConcertStyles>
 			<h2>
-				<span className="key">Date:</span> {date}
+				<span className="key">Date:</span> {formattedDate}
 			</h2>
 			<h2>
 				<span className="key">Venue:</span> {location.venue} | {location.city}
