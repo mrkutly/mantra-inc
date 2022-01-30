@@ -238,6 +238,237 @@ input ArticleCreateInput {
   link: String
 }
 
+type Video {
+  id: ID!
+  createdAt: DateTime
+  group: String
+  title: String
+  embed: String
+}
+
+input VideoWhereUniqueInput {
+  id: ID
+}
+
+input VideoWhereInput {
+  AND: [VideoWhereInput!]
+  OR: [VideoWhereInput!]
+  NOT: [VideoWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  group: StringFilter
+  title: StringFilter
+  embed: StringFilter
+}
+
+input VideoOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  group: OrderDirection
+  title: OrderDirection
+  embed: OrderDirection
+}
+
+input VideoUpdateInput {
+  createdAt: DateTime
+  group: String
+  title: String
+  embed: String
+}
+
+input VideoUpdateArgs {
+  where: VideoWhereUniqueInput!
+  data: VideoUpdateInput!
+}
+
+input VideoCreateInput {
+  createdAt: DateTime
+  group: String
+  title: String
+  embed: String
+}
+
+type Team {
+  id: ID!
+  createdAt: DateTime
+  title: String
+  members(
+    where: TeamMemberWhereInput! = {}
+    orderBy: [TeamMemberOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [TeamMember!]
+  membersCount(where: TeamMemberWhereInput! = {}): Int
+}
+
+input TeamWhereUniqueInput {
+  id: ID
+}
+
+input TeamWhereInput {
+  AND: [TeamWhereInput!]
+  OR: [TeamWhereInput!]
+  NOT: [TeamWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  title: StringFilter
+  members: TeamMemberManyRelationFilter
+}
+
+input TeamMemberManyRelationFilter {
+  every: TeamMemberWhereInput
+  some: TeamMemberWhereInput
+  none: TeamMemberWhereInput
+}
+
+input TeamOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  title: OrderDirection
+}
+
+input TeamUpdateInput {
+  createdAt: DateTime
+  title: String
+  members: TeamMemberRelateToManyForUpdateInput
+}
+
+input TeamMemberRelateToManyForUpdateInput {
+  disconnect: [TeamMemberWhereUniqueInput!]
+  set: [TeamMemberWhereUniqueInput!]
+  create: [TeamMemberCreateInput!]
+  connect: [TeamMemberWhereUniqueInput!]
+}
+
+input TeamUpdateArgs {
+  where: TeamWhereUniqueInput!
+  data: TeamUpdateInput!
+}
+
+input TeamCreateInput {
+  createdAt: DateTime
+  title: String
+  members: TeamMemberRelateToManyForCreateInput
+}
+
+input TeamMemberRelateToManyForCreateInput {
+  create: [TeamMemberCreateInput!]
+  connect: [TeamMemberWhereUniqueInput!]
+}
+
+type TeamMember {
+  id: ID!
+  name: String
+  team: Team
+  roles(
+    where: TeamMemberRoleWhereInput! = {}
+    orderBy: [TeamMemberRoleOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [TeamMemberRole!]
+  rolesCount(where: TeamMemberRoleWhereInput! = {}): Int
+}
+
+input TeamMemberWhereUniqueInput {
+  id: ID
+}
+
+input TeamMemberWhereInput {
+  AND: [TeamMemberWhereInput!]
+  OR: [TeamMemberWhereInput!]
+  NOT: [TeamMemberWhereInput!]
+  id: IDFilter
+  name: StringFilter
+  team: TeamWhereInput
+  roles: TeamMemberRoleManyRelationFilter
+}
+
+input TeamMemberRoleManyRelationFilter {
+  every: TeamMemberRoleWhereInput
+  some: TeamMemberRoleWhereInput
+  none: TeamMemberRoleWhereInput
+}
+
+input TeamMemberOrderByInput {
+  id: OrderDirection
+  name: OrderDirection
+}
+
+input TeamMemberUpdateInput {
+  name: String
+  team: TeamRelateToOneForUpdateInput
+  roles: TeamMemberRoleRelateToManyForUpdateInput
+}
+
+input TeamRelateToOneForUpdateInput {
+  create: TeamCreateInput
+  connect: TeamWhereUniqueInput
+  disconnect: Boolean
+}
+
+input TeamMemberRoleRelateToManyForUpdateInput {
+  disconnect: [TeamMemberRoleWhereUniqueInput!]
+  set: [TeamMemberRoleWhereUniqueInput!]
+  create: [TeamMemberRoleCreateInput!]
+  connect: [TeamMemberRoleWhereUniqueInput!]
+}
+
+input TeamMemberUpdateArgs {
+  where: TeamMemberWhereUniqueInput!
+  data: TeamMemberUpdateInput!
+}
+
+input TeamMemberCreateInput {
+  name: String
+  team: TeamRelateToOneForCreateInput
+  roles: TeamMemberRoleRelateToManyForCreateInput
+}
+
+input TeamRelateToOneForCreateInput {
+  create: TeamCreateInput
+  connect: TeamWhereUniqueInput
+}
+
+input TeamMemberRoleRelateToManyForCreateInput {
+  create: [TeamMemberRoleCreateInput!]
+  connect: [TeamMemberRoleWhereUniqueInput!]
+}
+
+type TeamMemberRole {
+  id: ID!
+  title: String
+}
+
+input TeamMemberRoleWhereUniqueInput {
+  id: ID
+}
+
+input TeamMemberRoleWhereInput {
+  AND: [TeamMemberRoleWhereInput!]
+  OR: [TeamMemberRoleWhereInput!]
+  NOT: [TeamMemberRoleWhereInput!]
+  id: IDFilter
+  title: StringFilter
+}
+
+input TeamMemberRoleOrderByInput {
+  id: OrderDirection
+  title: OrderDirection
+}
+
+input TeamMemberRoleUpdateInput {
+  title: String
+}
+
+input TeamMemberRoleUpdateArgs {
+  where: TeamMemberRoleWhereUniqueInput!
+  data: TeamMemberRoleUpdateInput!
+}
+
+input TeamMemberRoleCreateInput {
+  title: String
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -268,6 +499,38 @@ type Mutation {
   updateArticles(data: [ArticleUpdateArgs!]!): [Article]
   deleteArticle(where: ArticleWhereUniqueInput!): Article
   deleteArticles(where: [ArticleWhereUniqueInput!]!): [Article]
+  createVideo(data: VideoCreateInput!): Video
+  createVideos(data: [VideoCreateInput!]!): [Video]
+  updateVideo(where: VideoWhereUniqueInput!, data: VideoUpdateInput!): Video
+  updateVideos(data: [VideoUpdateArgs!]!): [Video]
+  deleteVideo(where: VideoWhereUniqueInput!): Video
+  deleteVideos(where: [VideoWhereUniqueInput!]!): [Video]
+  createTeam(data: TeamCreateInput!): Team
+  createTeams(data: [TeamCreateInput!]!): [Team]
+  updateTeam(where: TeamWhereUniqueInput!, data: TeamUpdateInput!): Team
+  updateTeams(data: [TeamUpdateArgs!]!): [Team]
+  deleteTeam(where: TeamWhereUniqueInput!): Team
+  deleteTeams(where: [TeamWhereUniqueInput!]!): [Team]
+  createTeamMember(data: TeamMemberCreateInput!): TeamMember
+  createTeamMembers(data: [TeamMemberCreateInput!]!): [TeamMember]
+  updateTeamMember(
+    where: TeamMemberWhereUniqueInput!
+    data: TeamMemberUpdateInput!
+  ): TeamMember
+  updateTeamMembers(data: [TeamMemberUpdateArgs!]!): [TeamMember]
+  deleteTeamMember(where: TeamMemberWhereUniqueInput!): TeamMember
+  deleteTeamMembers(where: [TeamMemberWhereUniqueInput!]!): [TeamMember]
+  createTeamMemberRole(data: TeamMemberRoleCreateInput!): TeamMemberRole
+  createTeamMemberRoles(data: [TeamMemberRoleCreateInput!]!): [TeamMemberRole]
+  updateTeamMemberRole(
+    where: TeamMemberRoleWhereUniqueInput!
+    data: TeamMemberRoleUpdateInput!
+  ): TeamMemberRole
+  updateTeamMemberRoles(data: [TeamMemberRoleUpdateArgs!]!): [TeamMemberRole]
+  deleteTeamMemberRole(where: TeamMemberRoleWhereUniqueInput!): TeamMemberRole
+  deleteTeamMemberRoles(
+    where: [TeamMemberRoleWhereUniqueInput!]!
+  ): [TeamMemberRole]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -322,6 +585,38 @@ type Query {
   ): [Article!]
   article(where: ArticleWhereUniqueInput!): Article
   articlesCount(where: ArticleWhereInput! = {}): Int
+  videos(
+    where: VideoWhereInput! = {}
+    orderBy: [VideoOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Video!]
+  video(where: VideoWhereUniqueInput!): Video
+  videosCount(where: VideoWhereInput! = {}): Int
+  teams(
+    where: TeamWhereInput! = {}
+    orderBy: [TeamOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Team!]
+  team(where: TeamWhereUniqueInput!): Team
+  teamsCount(where: TeamWhereInput! = {}): Int
+  teamMembers(
+    where: TeamMemberWhereInput! = {}
+    orderBy: [TeamMemberOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [TeamMember!]
+  teamMember(where: TeamMemberWhereUniqueInput!): TeamMember
+  teamMembersCount(where: TeamMemberWhereInput! = {}): Int
+  teamMemberRoles(
+    where: TeamMemberRoleWhereInput! = {}
+    orderBy: [TeamMemberRoleOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [TeamMemberRole!]
+  teamMemberRole(where: TeamMemberRoleWhereUniqueInput!): TeamMemberRole
+  teamMemberRolesCount(where: TeamMemberRoleWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }
