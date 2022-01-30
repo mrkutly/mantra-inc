@@ -75,3 +75,34 @@ model TeamMemberRole {
   title                 String       @default("")
   from_TeamMember_roles TeamMember[] @relation("TeamMember_roles")
 }
+
+model Concert {
+  id         String    @id @default(uuid()) @postgresql.Uuid
+  createdAt  DateTime? @default(now()) @map("created_at")
+  date       DateTime?
+  group      String
+  location   Location? @relation("Concert_location", fields: [locationId], references: [id])
+  locationId String?   @map("location") @postgresql.Uuid
+  program    Piece[]   @relation("Concert_program")
+
+  @@index([date])
+  @@index([group])
+  @@index([locationId])
+}
+
+model Piece {
+  id                   String    @id @default(uuid()) @postgresql.Uuid
+  composer             String    @default("")
+  title                String    @default("")
+  description          String    @default("")
+  support              String    @default("")
+  from_Concert_program Concert[] @relation("Concert_program")
+}
+
+model Location {
+  id                    String    @id @default(uuid()) @postgresql.Uuid
+  venue                 String    @default("")
+  city                  String    @default("")
+  support               String    @default("")
+  from_Concert_location Concert[] @relation("Concert_location")
+}

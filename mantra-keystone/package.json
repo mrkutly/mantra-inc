@@ -7,7 +7,8 @@
     "start": "keystone start",
     "build": "keystone build",
     "postinstall": "keystone postinstall",
-    "prisma": "keystone prisma"
+    "prisma": "keystone prisma",
+    "db:reset": "keystone dev --reset-db"
   },
   "dependencies": {
     "@keystone-6/auth": "^1.0.1",
@@ -15,6 +16,7 @@
     "@keystone-6/fields-document": "^1.0.1",
     "g": "^2.0.1",
     "keystone": "^4.2.1",
+    "lodash": "^4.17.21",
     "typescript": "^4.5.4"
   }
 }

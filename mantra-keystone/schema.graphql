@@ -469,6 +469,189 @@ input TeamMemberRoleCreateInput {
   title: String
 }
 
+type Concert {
+  id: ID!
+  createdAt: DateTime
+  date: DateTime
+  group: String
+  location: Location
+  program(
+    where: PieceWhereInput! = {}
+    orderBy: [PieceOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Piece!]
+  programCount(where: PieceWhereInput! = {}): Int
+}
+
+input ConcertWhereUniqueInput {
+  id: ID
+}
+
+input ConcertWhereInput {
+  AND: [ConcertWhereInput!]
+  OR: [ConcertWhereInput!]
+  NOT: [ConcertWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  date: DateTimeNullableFilter
+  group: StringFilter
+  location: LocationWhereInput
+  program: PieceManyRelationFilter
+}
+
+input PieceManyRelationFilter {
+  every: PieceWhereInput
+  some: PieceWhereInput
+  none: PieceWhereInput
+}
+
+input ConcertOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  date: OrderDirection
+  group: OrderDirection
+}
+
+input ConcertUpdateInput {
+  createdAt: DateTime
+  date: DateTime
+  group: String
+  location: LocationRelateToOneForUpdateInput
+  program: PieceRelateToManyForUpdateInput
+}
+
+input LocationRelateToOneForUpdateInput {
+  create: LocationCreateInput
+  connect: LocationWhereUniqueInput
+  disconnect: Boolean
+}
+
+input PieceRelateToManyForUpdateInput {
+  disconnect: [PieceWhereUniqueInput!]
+  set: [PieceWhereUniqueInput!]
+  create: [PieceCreateInput!]
+  connect: [PieceWhereUniqueInput!]
+}
+
+input ConcertUpdateArgs {
+  where: ConcertWhereUniqueInput!
+  data: ConcertUpdateInput!
+}
+
+input ConcertCreateInput {
+  createdAt: DateTime
+  date: DateTime
+  group: String
+  location: LocationRelateToOneForCreateInput
+  program: PieceRelateToManyForCreateInput
+}
+
+input LocationRelateToOneForCreateInput {
+  create: LocationCreateInput
+  connect: LocationWhereUniqueInput
+}
+
+input PieceRelateToManyForCreateInput {
+  create: [PieceCreateInput!]
+  connect: [PieceWhereUniqueInput!]
+}
+
+type Piece {
+  id: ID!
+  composer: String
+  title: String
+  description: String
+  support: String
+}
+
+input PieceWhereUniqueInput {
+  id: ID
+}
+
+input PieceWhereInput {
+  AND: [PieceWhereInput!]
+  OR: [PieceWhereInput!]
+  NOT: [PieceWhereInput!]
+  id: IDFilter
+  composer: StringFilter
+  title: StringFilter
+  description: StringFilter
+  support: StringFilter
+}
+
+input PieceOrderByInput {
+  id: OrderDirection
+  composer: OrderDirection
+  title: OrderDirection
+  description: OrderDirection
+  support: OrderDirection
+}
+
+input PieceUpdateInput {
+  composer: String
+  title: String
+  description: String
+  support: String
+}
+
+input PieceUpdateArgs {
+  where: PieceWhereUniqueInput!
+  data: PieceUpdateInput!
+}
+
+input PieceCreateInput {
+  composer: String
+  title: String
+  description: String
+  support: String
+}
+
+type Location {
+  id: ID!
+  venue: String
+  city: String
+  support: String
+}
+
+input LocationWhereUniqueInput {
+  id: ID
+}
+
+input LocationWhereInput {
+  AND: [LocationWhereInput!]
+  OR: [LocationWhereInput!]
+  NOT: [LocationWhereInput!]
+  id: IDFilter
+  venue: StringFilter
+  city: StringFilter
+  support: StringFilter
+}
+
+input LocationOrderByInput {
+  id: OrderDirection
+  venue: OrderDirection
+  city: OrderDirection
+  support: OrderDirection
+}
+
+input LocationUpdateInput {
+  venue: String
+  city: String
+  support: String
+}
+
+input LocationUpdateArgs {
+  where: LocationWhereUniqueInput!
+  data: LocationUpdateInput!
+}
+
+input LocationCreateInput {
+  venue: String
+  city: String
+  support: String
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -531,6 +714,30 @@ type Mutation {
   deleteTeamMemberRoles(
     where: [TeamMemberRoleWhereUniqueInput!]!
   ): [TeamMemberRole]
+  createConcert(data: ConcertCreateInput!): Concert
+  createConcerts(data: [ConcertCreateInput!]!): [Concert]
+  updateConcert(
+    where: ConcertWhereUniqueInput!
+    data: ConcertUpdateInput!
+  ): Concert
+  updateConcerts(data: [ConcertUpdateArgs!]!): [Concert]
+  deleteConcert(where: ConcertWhereUniqueInput!): Concert
+  deleteConcerts(where: [ConcertWhereUniqueInput!]!): [Concert]
+  createPiece(data: PieceCreateInput!): Piece
+  createPieces(data: [PieceCreateInput!]!): [Piece]
+  updatePiece(where: PieceWhereUniqueInput!, data: PieceUpdateInput!): Piece
+  updatePieces(data: [PieceUpdateArgs!]!): [Piece]
+  deletePiece(where: PieceWhereUniqueInput!): Piece
+  deletePieces(where: [PieceWhereUniqueInput!]!): [Piece]
+  createLocation(data: LocationCreateInput!): Location
+  createLocations(data: [LocationCreateInput!]!): [Location]
+  updateLocation(
+    where: LocationWhereUniqueInput!
+    data: LocationUpdateInput!
+  ): Location
+  updateLocations(data: [LocationUpdateArgs!]!): [Location]
+  deleteLocation(where: LocationWhereUniqueInput!): Location
+  deleteLocations(where: [LocationWhereUniqueInput!]!): [Location]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -617,6 +824,30 @@ type Query {
   ): [TeamMemberRole!]
   teamMemberRole(where: TeamMemberRoleWhereUniqueInput!): TeamMemberRole
   teamMemberRolesCount(where: TeamMemberRoleWhereInput! = {}): Int
+  concerts(
+    where: ConcertWhereInput! = {}
+    orderBy: [ConcertOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Concert!]
+  concert(where: ConcertWhereUniqueInput!): Concert
+  concertsCount(where: ConcertWhereInput! = {}): Int
+  pieces(
+    where: PieceWhereInput! = {}
+    orderBy: [PieceOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Piece!]
+  piece(where: PieceWhereUniqueInput!): Piece
+  piecesCount(where: PieceWhereInput! = {}): Int
+  locations(
+    where: LocationWhereInput! = {}
+    orderBy: [LocationOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Location!]
+  location(where: LocationWhereUniqueInput!): Location
+  locationsCount(where: LocationWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }

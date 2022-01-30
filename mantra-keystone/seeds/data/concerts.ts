@@ -1,5 +1,7 @@
-{
-	"mantraYouth": [
+import { Group } from "../../types";
+
+export const concertSeeds = {
+	[Group.MantraYouth]: [
 		{
 			"year": "2017",
 			"concerts": [
@@ -405,7 +407,7 @@
 			]
 		}
 	],
-	"recap": [
+	[Group.Recap]: [
 		{
 			"year": "2022",
 			"concerts": [
@@ -465,7 +467,7 @@
 			]
 		}
 	],
-	"mantra": [
+	[Group.Mantra]: [
 		{
 			"year": "2022",
 			"concerts": [
@@ -1629,7 +1631,31 @@
 					]
 				},
 				{
-					"date": "May 31 - June 2",
+					"date": "June 2",
+					"location": {
+						"venue": "Music at First",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"description": "3Nights :: Tristan Perich, Aaron Siegel, and Ted Hearne"
+						}
+					]
+				},
+				{
+					"date": "June 1",
+					"location": {
+						"venue": "Music at First",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"description": "3Nights :: Tristan Perich, Aaron Siegel, and Ted Hearne"
+						}
+					]
+				},
+				{
+					"date": "May 31",
 					"location": {
 						"venue": "Music at First",
 						"city": "Brooklyn, NY"
