@@ -1,6 +1,6 @@
 import { AlbumHost, Group } from "../../types";
 
-export const albumsSeeds = [
+export const albumSeeds = [
 	{
 		group: Group.Recap,
 		title: "Recap - Count to Five",

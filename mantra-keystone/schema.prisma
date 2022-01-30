@@ -29,3 +29,16 @@ model Album {
 
   @@index([group])
 }
+
+model Article {
+  id          String    @id @default(uuid()) @postgresql.Uuid
+  createdAt   DateTime? @default(now()) @map("created_at")
+  group       String
+  title       String    @default("")
+  publication String    @default("")
+  pullQuote   String    @default("") @map("pull_quote")
+  author      String    @default("")
+  link        String    @default("")
+
+  @@index([group])
+}

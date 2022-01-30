@@ -173,6 +173,71 @@ input AlbumCreateInput {
   link: String
 }
 
+type Article {
+  id: ID!
+  createdAt: DateTime
+  group: String
+  title: String
+  publication: String
+  pullQuote: String
+  author: String
+  link: String
+}
+
+input ArticleWhereUniqueInput {
+  id: ID
+}
+
+input ArticleWhereInput {
+  AND: [ArticleWhereInput!]
+  OR: [ArticleWhereInput!]
+  NOT: [ArticleWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  group: StringFilter
+  title: StringFilter
+  publication: StringFilter
+  pullQuote: StringFilter
+  author: StringFilter
+  link: StringFilter
+}
+
+input ArticleOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  group: OrderDirection
+  title: OrderDirection
+  publication: OrderDirection
+  pullQuote: OrderDirection
+  author: OrderDirection
+  link: OrderDirection
+}
+
+input ArticleUpdateInput {
+  createdAt: DateTime
+  group: String
+  title: String
+  publication: String
+  pullQuote: String
+  author: String
+  link: String
+}
+
+input ArticleUpdateArgs {
+  where: ArticleWhereUniqueInput!
+  data: ArticleUpdateInput!
+}
+
+input ArticleCreateInput {
+  createdAt: DateTime
+  group: String
+  title: String
+  publication: String
+  pullQuote: String
+  author: String
+  link: String
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -194,6 +259,15 @@ type Mutation {
   updateAlbums(data: [AlbumUpdateArgs!]!): [Album]
   deleteAlbum(where: AlbumWhereUniqueInput!): Album
   deleteAlbums(where: [AlbumWhereUniqueInput!]!): [Album]
+  createArticle(data: ArticleCreateInput!): Article
+  createArticles(data: [ArticleCreateInput!]!): [Article]
+  updateArticle(
+    where: ArticleWhereUniqueInput!
+    data: ArticleUpdateInput!
+  ): Article
+  updateArticles(data: [ArticleUpdateArgs!]!): [Article]
+  deleteArticle(where: ArticleWhereUniqueInput!): Article
+  deleteArticles(where: [ArticleWhereUniqueInput!]!): [Article]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -240,6 +314,14 @@ type Query {
   ): [Album!]
   album(where: AlbumWhereUniqueInput!): Album
   albumsCount(where: AlbumWhereInput! = {}): Int
+  articles(
+    where: ArticleWhereInput! = {}
+    orderBy: [ArticleOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Article!]
+  article(where: ArticleWhereUniqueInput!): Article
+  articlesCount(where: ArticleWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }
