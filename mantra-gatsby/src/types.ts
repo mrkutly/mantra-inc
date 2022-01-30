@@ -11,7 +11,7 @@ export interface Article {
 	publication: string
 	pullQuote: string
 	title: string
-	url: string
+	link: string
 }
 
 export interface CalendarNode {

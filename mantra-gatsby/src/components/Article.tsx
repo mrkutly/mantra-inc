@@ -26,9 +26,9 @@ const ArticleLink = styled.a`
 `
 
 const Article = ({
-	article: { publication, title, pullQuote, url, author },
+	article: { publication, title, pullQuote, link, author },
 }) => (
-	<ArticleLink href={url} target="_blank" rel="noopener noreferrer">
+	<ArticleLink href={link} target="_blank" rel="noopener noreferrer">
 		<ArticleListItem>
 			<h1>{publication}</h1>
 			<h2>{title}</h2>

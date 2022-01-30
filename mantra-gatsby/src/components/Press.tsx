@@ -8,28 +8,28 @@ import { Article as ArticleType } from '../types'
 
 const PRESS_QUERY = graphql`
 	query {
-		articles: allArticlesJson {
-			nodes {
+		api {
+			articles(orderBy: { createdAt: desc }) {
 				id
 				author
 				publication
 				pullQuote
 				title
-				url
+				link
 			}
 		}
 	}
 `
 
 interface PressResult {
-	articles: {
-		nodes: ArticleType[]
+	api: {
+		articles: ArticleType[]
 	}
 }
 
 const Press = () => {
-	const { articles } = useStaticQuery<PressResult>(PRESS_QUERY)
-	const mappedArticles = articles.nodes.map(article => (
+	const { articles } = useStaticQuery<PressResult>(PRESS_QUERY).api
+	const mappedArticles = articles.map(article => (
 		<Article article={article} key={article.id} />
 	))
 

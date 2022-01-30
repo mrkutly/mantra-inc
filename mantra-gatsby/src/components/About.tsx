@@ -15,12 +15,24 @@ const ABOUT_QUERY = graphql`
 			}
 		}
 
-		people: allPeopleJson {
-			nodes {
-				program
-				staff {
+		api {
+			admin: teams(where: { title: { equals: "Administration" }}) {
+				title
+				members(orderBy: { name: asc }) {
 					name
-					roles
+					roles {
+						title
+					}
+				}
+			}
+
+			otherTeams: teams(where: { NOT: { title: { equals: "Administration" }}}) {
+				title
+				members(orderBy: { name: asc }) {
+					name
+					roles {
+						title
+					}
 				}
 			}
 		}
@@ -33,13 +45,21 @@ export interface ImageResult {
 	}
 }
 
+type TeamMember = {
+	name: string
+	roles: { title: string }[]
+}
+
+type Team = {
+	title: string
+	members: TeamMember[]
+}
+
 type Bios = {
 	bandImage: ImageResult
-	people: {
-		nodes: Array<{
-			program: string
-			staff: Array<{ name: string; roles: string[] }>
-		}>
+	api: {
+		admin: Team[]
+		otherTeams: Team[]
 	}
 }
 
@@ -47,15 +67,7 @@ const randomOrder = () => [-1, 0, 1][Math.floor(Math.random() * 3)]
 
 const About = () => {
 	const data = useStaticQuery<Bios>(ABOUT_QUERY)
-
-	const [admin, otherPrograms] = data.people.nodes.reduce(
-		(acc, node) => {
-			if (node.program === 'Administration') acc[0].push(node)
-			else acc[1].push(node)
-			return acc
-		},
-		[[], []]
-	)
+	const { admin, otherTeams } = data.api
 
 	return (
 		<section id="about" style={{ fontWeight: 600 }}>
@@ -95,17 +107,17 @@ const About = () => {
 				<ContentStyles>
 					<h2>Who are we?</h2>
 					<div className="grid">
-						{admin.map(({ program, staff }) => (
-							<div key={`${program}-staff`}>
-								<h3>{program}</h3>
+						{admin.map(({ title, members }) => (
+							<div key={`${title}-members`}>
+								<h3>{title}</h3>
 								<ul>
-									{staff.sort(randomOrder).map(({ name, roles }) => (
-										<li key={`${program}-${name}`}>
+									{members.map(({ name, roles }) => (
+										<li key={`${title}-${name}`}>
 											<p>{name}</p>
 											{roles && (
 												<ul className="small">
 													{roles.map((role, idx) => (
-														<li key={`${name}-${role}-${idx}`}>{role}</li>
+														<li key={`${name}-${role}-${idx}`}>{role.title}</li>
 													))}
 												</ul>
 											)}
@@ -115,17 +127,17 @@ const About = () => {
 							</div>
 						))}
 						<div className="sub-grid">
-							{otherPrograms.sort(randomOrder).map(({ program, staff }) => (
-								<div key={`${program}-staff`}>
-									<h3>{program}</h3>
+							{otherTeams.sort(randomOrder).map(({ title, members }) => (
+								<div key={`${title}-staff`}>
+									<h3>{title}</h3>
 									<ul>
-										{staff.sort(randomOrder).map(({ name, roles }) => (
-											<li key={`${program}-${name}`}>
+										{members.map(({ name, roles }) => (
+											<li key={`${title}-${name}`}>
 												<p>{name}</p>
 												{roles && (
 													<ul className="small">
 														{roles.map((role, idx) => (
-															<li key={`${name}-${role}-${idx}`}>{role}</li>
+															<li key={`${name}-${role}-${idx}`}>{role.title}</li>
 														))}
 													</ul>
 												)}
