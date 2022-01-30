@@ -6,7 +6,7 @@ import LazyIFrame from "./LazyIFrame"
 const ApplePlayer = ({ album }: PlayerProps) => (
 	<AlbumPlayerStyles className="apple">
 		<LazyIFrame
-			title={`${album.title}`}
+			title={album.title}
 			allow="autoplay *; encrypted-media *;"
 			frameBorder="0"
 			height="450"
@@ -14,7 +14,7 @@ const ApplePlayer = ({ album }: PlayerProps) => (
 				overflow: "hidden",
 			}}
 			sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-			src={`${album.url}`}
+			src={album.embed}
 		/>
 	</AlbumPlayerStyles>
 )

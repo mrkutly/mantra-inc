@@ -7,12 +7,12 @@ const BandcampPlayer = ({ album }: PlayerProps) => {
 	return (
 		<AlbumPlayerStyles className="bandcamp">
 			<LazyIFrame
-				title={`${album.title}`}
+				title={album.title}
 				style={{ border: "0" }}
-				src={`${album.url}`}
+				src={album.embed}
 				seamless
 			>
-				<a href={`${album.href}`}>{album.title}</a>
+				<a href={album.link}>{album.title}</a>
 			</LazyIFrame>
 		</AlbumPlayerStyles>
 	)

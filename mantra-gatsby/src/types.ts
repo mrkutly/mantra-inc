@@ -1,7 +1,7 @@
 export interface Album {
 	title: string
-	url: string
-	href: string
+	link: string
+	embed: string
 	host: string
 }
 

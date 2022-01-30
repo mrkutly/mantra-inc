@@ -6,8 +6,8 @@ import LazyIFrame from "./LazyIFrame"
 const SpotifyPlayer = ({ album }: PlayerProps) => (
 	<AlbumPlayerStyles className="spotify">
 		<LazyIFrame
-			title={`${album.title}`}
-			src={`${album.url}`}
+			title={album.title}
+			src={album.embed}
 			frameBorder="0"
 			allowTransparency={true}
 			allow="encrypted-media"

@@ -1,7 +1,9 @@
 import React, { HTMLProps } from "react"
 import useLazyIframe from "../../hooks/useLazyIframe"
 
-interface LazyFrameProps extends HTMLProps<HTMLIFrameElement> {}
+interface LazyFrameProps extends HTMLProps<HTMLIFrameElement> {
+	allow?: string
+}
 
 const LazyIFrame: React.FC<LazyFrameProps> = ({ children, src, ...rest }) => {
 	useLazyIframe()

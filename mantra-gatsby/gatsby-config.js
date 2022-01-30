@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
 	siteMetadata: {
 		title: `mantra percussion`,
@@ -77,6 +79,14 @@ module.exports = {
 				name: `data`,
 				path: `${__dirname}/src/data`,
 			},
+		},
+		{
+			resolve: 'gatsby-source-graphql',
+			options: {
+				typeName: 'API',
+				fieldName: 'api',
+				url: process.env.API_URL
+			}
 		},
 		`gatsby-transformer-sharp`,
 		{

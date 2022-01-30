@@ -8,11 +8,11 @@ import { Album, MediaTypes, Video } from '../types'
 
 export const MEDIA_QUERY = graphql`
 	query {
-		albums: allAlbumsJson {
-			nodes {
+		albumsResult: api {
+			albums {
 				title
-				url
-				href
+				link
+				embed
 				host
 			}
 		}
@@ -27,8 +27,8 @@ export const MEDIA_QUERY = graphql`
 `
 
 interface MediaResult {
-	albums: {
-		nodes: Album[]
+	albumsResult: {
+		albums: Album[]
 	}
 	videos: {
 		nodes: Video[]
@@ -37,11 +37,11 @@ interface MediaResult {
 
 const Media = () => {
 	const [active, setActive] = useState<MediaTypes>(MediaTypes.VIDEOS)
-	const { albums, videos } = useStaticQuery<MediaResult>(MEDIA_QUERY)
+	const { albumsResult, videos } = useStaticQuery<MediaResult>(MEDIA_QUERY)
 
 	return (
 		<section id="media">
-			<FullScreenCard background="#000000b0" color="white">
+			<FullScreenCard color="white">
 				<SectionHeading>
 					<div>
 						{[MediaTypes.VIDEOS, MediaTypes.ALBUMS].map(opt => (
@@ -58,7 +58,7 @@ const Media = () => {
 						))}
 					</div>
 				</SectionHeading>
-				<MediaIndex videos={videos.nodes} albums={albums.nodes} type={active} />
+				<MediaIndex videos={videos.nodes} albums={albumsResult.albums} type={active} />
 			</FullScreenCard>
 		</section>
 	)
