@@ -9,14 +9,14 @@ import { Album, MediaTypes, Video } from '../types'
 export const MEDIA_QUERY = graphql`
 	query {
 		 api {
-			albums {
+			albums(orderBy: { createdAt: desc }) {
 				title
 				link
 				embed
 				host
 			}
 
-			videos {
+			videos(orderBy: { createdAt: desc}) {
 				title
 				embed
 			}
