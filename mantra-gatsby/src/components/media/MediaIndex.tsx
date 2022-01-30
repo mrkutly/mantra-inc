@@ -11,13 +11,13 @@ interface MediaProps {
 }
 
 const MediaIndex = ({ albums, videos, type }: MediaProps) => {
-	const mappedVideos = videos.map((video, i) => (
+	const mappedVideos = () => videos.map((video, i) => (
 		<div className="card">
 			<VideoPlayer key={`${video}-${i}`} video={video} />
 			<p>{video.title}</p>
 		</div>
 	))
-	const mappedAlbums = albums.map((album, i) => (
+	const mappedAlbums = () => albums.map((album, i) => (
 		<div className="card">
 			<AlbumPlayer key={`${album}-${i}`} album={album} />
 			<p>{album.title}</p>
@@ -26,8 +26,8 @@ const MediaIndex = ({ albums, videos, type }: MediaProps) => {
 
 	return (
 		<Index type={type}>
-			{type === MediaTypes.ALBUMS && mappedAlbums}
-			{type === MediaTypes.VIDEOS && mappedVideos}
+			{type === MediaTypes.ALBUMS && mappedAlbums()}
+			{type === MediaTypes.VIDEOS && mappedVideos()}
 		</Index>
 	)
 }

@@ -10,7 +10,7 @@ const VideoPlayer = ({ video }: PlayerProps) => (
 			title={video.title}
 			width="100%"
 			height="100%"
-			src={`${video.url}`}
+			src={video.embed}
 			frameBorder="0"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 			allowFullScreen
