@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/"
+  to = "/count-to-five"
+  status = 200
+  force = true
+  query = {redirect = "recap"}

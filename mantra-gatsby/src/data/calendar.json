@@ -1,0 +1,2111 @@
+{
+	"mantraYouth": [
+		{
+			"year": "2017",
+			"concerts": [
+				{
+					"date": "February 4",
+					"location": {
+						"venue": "Necessary Noise Festival",
+						"city": "Rahway, NJ"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming pt. 1"
+						}
+					]
+				},
+				{
+					"date": "May 3",
+					"location": {
+						"venue": "Rahway High School",
+						"city": "Rahway, NJ"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming pt. 1"
+						},
+						{
+							"composer": "Daniel Levitan",
+							"title": "Marimba Quartet"
+						}
+					]
+				},
+				{
+					"date": "May 5",
+					"location": {
+						"venue": "Randolph Day of Percussion",
+						"city": "Randolph, NJ"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming pt. 1"
+						},
+						{
+							"composer": "Daniel Levitan",
+							"title": "Marimba Quartet"
+						}
+					]
+				},
+				{
+					"date": "May 9",
+					"location": {
+						"venue": "NJ Day of Percussion",
+						"city": "Demarest, NJ"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming pt. 1"
+						},
+						{
+							"composer": "Daniel Levitan",
+							"title": "Marimba Quartet"
+						}
+					]
+				},
+				{
+					"date": "June 21",
+					"location": {
+						"venue": "Make Music NY Festival",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron, Miguel Bolivar, Christian Rodriguez & Lainie Fefferman",
+							"title": "Concerto for Buildings III"
+						}
+					]
+				},
+				{
+					"date": "December 4",
+					"location": {
+						"venue": "Roulette Intermedium",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Daniel Wohl",
+							"title": "Holographic"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2018",
+			"concerts": [
+				{
+					"date": "February 10",
+					"location": {
+						"venue": "Necessary Noise Festival",
+						"city": "Rahway, NJ"
+					},
+					"program": []
+				},
+				{
+					"date": "March 12",
+					"location": {
+						"venue": "Roulette Intermedium",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Sean Friar",
+							"title": "Clunker Concerto"
+						}
+					]
+				},
+				{
+					"date": "May 4",
+					"location": {
+						"venue": "Randolph Day of Percussion",
+						"city": "Randolph, NJ"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming"
+						}
+					]
+				},
+				{
+					"date": "May 9",
+					"location": {
+						"venue": "Rahway HS",
+						"city": "Rahway, NJ"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming"
+						}
+					]
+				},
+				{
+					"date": "May 20",
+					"location": {
+						"venue": "New Music Gathering at Berklee College of Music",
+						"city": "Boston, MA"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming"
+						}
+					]
+				},
+				{
+					"date": "May 24",
+					"location": {
+						"venue": "The Cell",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2019",
+			"concerts": [
+				{
+					"date": "January 10",
+					"location": {
+						"venue": "Verona Day of Percussion",
+						"city": "Verona, NJ"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron",
+							"title": "Count to Five"
+						}
+					]
+				},
+				{
+					"date": "January 20",
+					"location": {
+						"venue": "National Sawdust",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "Science is Only a Sometimes Friend"
+						}
+					]
+				},
+				{
+					"date": "February 9",
+					"location": {
+						"venue": "Necessary Noise Festival",
+						"city": "Rahway, NJ"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron",
+							"title": "Count to Five"
+						}
+					]
+				},
+				{
+					"date": "February 17",
+					"location": {
+						"venue": "NYU Day of Percussion",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron",
+							"title": "Count to Five"
+						}
+					]
+				},
+				{
+					"date": "April 10",
+					"location": {
+						"venue": "MyCincinnati Youth Program",
+						"city": "Cincinnati, OH"
+					},
+					"program": [
+						{
+							"composer": "",
+							"title": "Workshop"
+						}
+					]
+				},
+				{
+					"date": "April 14",
+					"location": {
+						"venue": "MyCincinnati",
+						"city": "Cincinnati, OH"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron",
+							"title": "Count to Five"
+						},
+						{
+							"composer": "Ayanna Woods",
+							"title": "TriplePoint"
+						}
+					]
+				},
+				{
+					"date": "May 8",
+					"location": {
+						"venue": "Rahway HS",
+						"city": "Rahway, NJ"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron",
+							"title": "Count to Five"
+						},
+						{
+							"composer": "Ayanna Woods",
+							"title": "TriplePoint"
+						}
+					]
+				},
+				{
+					"date": "May 11",
+					"location": {
+						"venue": "Randolph Day of Percussion",
+						"city": "Randolph, NJ"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron",
+							"title": "Count to Five"
+						}
+					]
+				},
+				{
+					"date": "September 22",
+					"location": {
+						"venue": "Carnegie Hall Family Day",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron",
+							"title": "Count to Five"
+						}
+					]
+				},
+				{
+					"date": "October 5",
+					"location": {
+						"venue": "Princeton UnRuly Sounds Festival",
+						"city": "Princeton, NJ"
+					},
+					"program": [
+						{
+							"composer": "Angelica Negron",
+							"title": "Count to Five"
+						},
+						{
+							"composer": "Jenny Beck",
+							"title": "by the time we look for it"
+						}
+					]
+				},
+				{
+					"date": "December 14",
+					"location": {
+						"venue": "Juilliard Percussion Festival",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Jenny Beck",
+							"title": "by the time we look for it"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2020",
+			"concerts": [
+				{
+					"date": "February 8",
+					"location": {
+						"venue": "Necessary Noise Festival",
+						"city": "Rahway, NJ"
+					},
+					"program": []
+				},
+				{
+					"date": "April 25",
+					"location": {
+						"venue": "Look and Listen Festival (cancelled due to Covid)",
+						"city": "New York, NY"
+					},
+					"program": []
+				},
+				{
+					"date": "October 4",
+					"location": {
+						"venue": "Brooklyn Botanic Garden",
+						"city": "Brooklen, NY"
+					},
+					"program": [
+						{
+							"title": "loved.",
+							"composer": "Michael Gordon"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2021",
+			"concerts": [
+				{
+					"date": "February 18-20",
+					"location": {
+						"venue": "New Jersey Music Educators Association State Conference",
+						"city": "Remote"
+					},
+					"program": []
+				},
+				{
+					"date": "March 20",
+					"location": {
+						"venue": "Necessary Noise Festival Virtual Clinic",
+						"city": "Remote"
+					},
+					"program": []
+				},
+				{
+					"date": "April 24",
+					"location": {
+						"venue": "Necessary Noise Festival Virtual Livestream",
+						"city": "Remote"
+					},
+					"program": []
+				},
+				{
+					"date": "November",
+					"location": {
+						"venue": "Mantra Youth Percussion Open House",
+						"city": "Rahway, NJ"
+					},
+					"program": []
+				}
+			]
+		}
+	],
+	"recap": [
+		{
+			"year": "2022",
+			"concerts": [
+				{
+					"date": "Summer",
+					"location": {
+						"venue": "Beringia tour of Alaska",
+						"city": "Alaska"
+					},
+					"program": []
+				},
+				{
+					"date": "November",
+					"location": {
+						"venue": "PASIC session November presented by PAS Diversity Alliance",
+						"city": "TBA"
+					},
+					"program": []
+				}
+			]
+		},
+		{
+			"year": "2021",
+			"concerts": [
+				{
+					"date": "February 18-20",
+					"location": {
+						"venue": "New Jersey Music Educators Association State Conference",
+						"city": "Remote"
+					},
+					"program": []
+				},
+				{
+					"date": "April 24",
+					"location": {
+						"venue": "Necessary Noise Festival Virtual Livestream",
+						"city": "Remote"
+					},
+					"program": []
+				},
+				{
+					"date": "August 12-14",
+					"location": {
+						"venue": "HEADLINING the New Music Gathering",
+						"city": "Minneapolis, MN"
+					},
+					"program": []
+				},
+				{
+					"date": "September 29",
+					"location": {
+						"venue": "Count to Five Album Release at Tenri Cultural Institute",
+						"city": "New York, NY"
+					},
+					"program": []
+				}
+			]
+		}
+	],
+	"mantra": [
+		{
+			"year": "2022",
+			"concerts": [
+				{
+					"date": "May",
+					"location": {
+						"venue": "Princeton Sound Kitchen",
+						"city": "Princeton, NJ"
+					},
+					"program": [
+						{
+							"composer": "Matt McBane",
+							"title": "New work (with Ashley Bathgate)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2021",
+			"concerts": [
+				{
+					"date": "June",
+					"location": {
+						"venue": "Timber 10 Year Anniversary Concert",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "May",
+					"location": {
+						"venue": "Brooklyn Botanic Garden",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "loved."
+						}
+					]
+				},
+				{
+					"date": "April 24",
+					"location": {
+						"venue": "Necessary Noise Festival Virtual Livestream",
+						"city": "Remote"
+					},
+					"program": []
+				}
+			]
+		},
+		{
+			"year": "2020",
+			"concerts": [
+				{
+					"date": "October 4",
+					"location": {
+						"venue": "Brooklyn Botanic Garden",
+						"city": "Brooklen, NY"
+					},
+					"program": [
+						{
+							"title": "loved.",
+							"composer": "Michael Gordon"
+						}
+					]
+				},
+				{
+					"date": "June",
+					"location": {
+						"venue": "Mannes Pre-college Remote Residency",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"title": "25 Student Compositions",
+							"composer": "Mannes Pre-college composition students"
+						}
+					]
+				},
+				{
+					"date": "June",
+					"location": {
+						"venue": "Bang on a Can Marathon (performance cancelled due to Covid)",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"title": "Timber",
+							"composer": "Michael Gordon"
+						}
+					]
+				},
+				{
+					"date": "May 1",
+					"location": {
+						"venue": "Irondale Center for the Arts",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2019",
+			"concerts": [
+				{
+					"date": "November 9",
+					"location": {
+						"venue": "KM28",
+						"city": "Berlin, Germany"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "November 6",
+					"location": {
+						"venue": "Dox+",
+						"city": "Prague, Czechia"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "September 22",
+					"location": {
+						"venue": "Carnegie Hall Family Day",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Sam Pluta",
+							"title": "Four Sixes"
+						}
+					]
+				},
+				{
+					"date": "March 6",
+					"location": {
+						"venue": "Pregones Theater",
+						"city": "Bronx, NY"
+					},
+					"program": [
+						{
+							"composer": "Tristan Perich",
+							"title": "Observations"
+						},
+						{
+							"composer": "Sam Pluta",
+							"title": "Four Sixes"
+						},
+						{
+							"composer": "Steve Reich",
+							"title": "Music for Pieces of Wood (arr. by David Cossin)"
+						},
+						{
+							"composer": "Julia Wolfe",
+							"title": "Dark Full Ride"
+						}
+					]
+				},
+				{
+					"date": "January 20",
+					"location": {
+						"venue": "National Sawdust",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "A Great Many (feat. Christa Van Alstine)"
+						},
+						{
+							"composer": "Aaron Siegel",
+							"title": "Science is Only a Sometimes Friend"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2018",
+			"concerts": [
+				{
+					"date": "October 27",
+					"location": {
+						"venue": "GAIDA International Festival",
+						"city": "Vilnius, Lithuania"
+					},
+					"program": [
+						{
+							"composer": "Tristan Perich",
+							"title": "Observations"
+						},
+						{
+							"composer": "Sam Pluta",
+							"title": "Four Sixes"
+						},
+						{
+							"composer": "Steve Reich",
+							"title": "Music for Pieces of Wood (arr. by David Cossin)"
+						},
+						{
+							"composer": "Julia Wolfe",
+							"title": "Dark Full Ride"
+						},
+						{
+							"composer": "Michael Gordon",
+							"title": "Tree-Oh"
+						},
+						{
+							"composer": "Iannis Xenakis",
+							"title": "Okho"
+						}
+					]
+				},
+				{
+					"date": "May 6",
+					"location": {
+						"venue": "National Sawdust",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Matthew Welch",
+							"title": "And Here We Are"
+						}
+					]
+				},
+				{
+					"date": "March 29",
+					"location": {
+						"venue": "Merkin Hall, Ecstatic Music Festival",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "A Great Many (feat. Christa Van Alstine)"
+						},
+						{
+							"composer": "Bent Knee",
+							"title": "collaboration"
+						}
+					]
+				},
+				{
+					"date": "March 22",
+					"location": {
+						"venue": "Oz Arts",
+						"city": "Nashville, TN"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "February 17",
+					"location": {
+						"venue": "Kent State University Vanguard Series",
+						"city": "Kent, OH"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						},
+						{
+							"composer": "Aaron Siegel",
+							"title": "A Great Many (feat. Christa Van Alstine)"
+						}
+					]
+				},
+				{
+					"date": "February 19",
+					"location": {
+						"venue": "Bowling Green State University, MidAmerican Center for Contemporary Music",
+						"city": "Bowling Green, OH",
+						"support": "Foundation for Contemporary Arts Emergency Grant"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "A Great Many (feat. Christa Van Alstine)"
+						},
+						{
+							"composer": "Lesley Flanigan",
+							"title": "Hedera"
+						},
+						{
+							"composer": "Tristan Perich",
+							"title": "Moment of Inertia"
+						},
+						{
+							"composer": "Michael Fiday",
+							"title": "It Shakes My Teeth"
+						}
+					]
+				},
+				{
+					"date": "February 21",
+					"location": {
+						"venue": "Johnstone Fund for New Music",
+						"city": "Columbus, OH"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "February 22",
+					"location": {
+						"venue": "Cincinnati Conservatory of Music",
+						"city": "Cincinnati, OH"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "February 23",
+					"location": {
+						"venue": "Cleveland Museum of Art -- Transformer Station",
+						"city": "Cleveland, OH"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2017",
+			"concerts": [
+				{
+					"date": "November 19",
+					"location": {
+						"venue": "National Gallery of Art",
+						"city": "Washington D.C."
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "October 1",
+					"location": {
+						"venue": "Sacrum Profanum Festival",
+						"city": "Krakow, Poland"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming feat. Gideon Alorwoyie and his ensemble"
+						},
+						{
+							"composer": "Steve Reich",
+							"title": "Four Organs"
+						},
+						{
+							"composer": "Steve Reich",
+							"title": "Music for Pieces of Wood (arr. by David Cossin)"
+						}
+					]
+				},
+				{
+					"date": "April 8",
+					"location": {
+						"venue": "Vancouver New Music",
+						"city": "Vancouver, Canada"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "A Great Many (feat. Christa Van Alstine)"
+						},
+						{
+							"composer": "Lesley Flanigan",
+							"title": "Hedera"
+						},
+						{
+							"composer": "Tristan Perich",
+							"title": "Moment of Inertia"
+						},
+						{
+							"composer": "Paul Dolden",
+							"title": "Mantra Groove"
+						}
+					]
+				},
+				{
+					"date": "April 7",
+					"location": {
+						"venue": "Western Washington University",
+						"city": "Bellingham, WA"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "A Great Many (feat.Christa Van Alstine)"
+						},
+						{
+							"composer": "Tristan Perich",
+							"title": "Moment of Inertia"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2016",
+			"concerts": [
+				{
+					"date": "December 15",
+					"location": {
+						"venue": "Experiments in Opera, Merkin Hall",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Matthew Welch",
+							"title": "And Here We Are"
+						}
+					]
+				},
+				{
+					"date": "December 14",
+					"location": {
+						"venue": "(le) poisson rouge",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "December 10",
+					"location": {
+						"venue": "National Sawdust",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming feat. Gideon Alorwoyie and his ensemble"
+						},
+						{
+							"composer": "Steve Reich",
+							"title": "Four Organs"
+						},
+						{
+							"composer": "Steve Reich",
+							"title": "Music for Pieces of Wood (arr. by David Cossin)"
+						}
+					]
+				},
+				{
+					"date": "December 4",
+					"location": {
+						"venue": "The Dither Extravaganza",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "David Grubbs",
+							"title": "Excerpts from Prismrose"
+						}
+					]
+				},
+				{
+					"date": "April 29-30",
+					"location": {
+						"venue": "Right Now Music",
+						"city": "Seoul, South Korea"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						},
+						{
+							"composer": "Mathew Rosenblum",
+							"title": "Ostatnia Runda"
+						}
+					]
+				},
+				{
+					"date": "April 22-23",
+					"location": {
+						"venue": "Duke Performances",
+						"city": "Durham, NC"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "February 27",
+					"location": {
+						"venue": "Redcat/Broad Museum",
+						"city": "Los Angeles, CA"
+					},
+					"program": [
+						{
+							"composer": "Daniel Wohl",
+							"title": "Holographic"
+						}
+					]
+				},
+				{
+					"date": "February 11",
+					"location": {
+						"venue": "Saint Paul Chamber Orchestra /Liquid Music series",
+						"city": "St. Paul, MN"
+					},
+					"program": [
+						{
+							"composer": "Daniel Wohl",
+							"title": "Holographic"
+						}
+					]
+				},
+				{
+					"date": "February 6",
+					"location": {
+						"venue": "Indianapolis Museum of Art",
+						"city": "Indianapolis, IN"
+					},
+					"program": [
+						{
+							"composer": "Daniel Wohl",
+							"title": "Holographic"
+						}
+					]
+				},
+				{
+					"date": "February 5",
+					"location": {
+						"venue": "Philadelphia Fringe Arts",
+						"city": "Philadelphia, PA"
+					},
+					"program": [
+						{
+							"composer": "Daniel Wohl",
+							"title": "Holographic"
+						}
+					]
+				},
+				{
+					"date": "January 21",
+					"location": {
+						"venue": "Baryshnikov Arts Center",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Daniel Wohl",
+							"title": "Holographic"
+						}
+					]
+				},
+				{
+					"date": "January 10-17",
+					"location": {
+						"venue": "Massachusetts Museum of Contemporary Art",
+						"city": "North Adams, MA"
+					},
+					"program": [
+						{
+							"composer": "Daniel Wohl",
+							"title": "Holographic"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2015",
+			"concerts": [
+				{
+					"date": "December 12",
+					"location": {
+						"venue": "The Stone",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Matthew Welch",
+							"title": "And Here We Are"
+						}
+					]
+				},
+				{
+					"date": "December 6",
+					"location": {
+						"venue": "Wesleyan University Memorial Chapel",
+						"city": "Middletown, CT"
+					},
+					"program": [
+						{
+							"composer": "Wesleyan University Graduate Students",
+							"title": "Assorted works"
+						}
+					]
+				},
+				{
+					"date": "November 4",
+					"location": {
+						"venue": "New Museum",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Drumming"
+						}
+					]
+				},
+				{
+					"date": "September 14",
+					"location": {
+						"venue": "Wesleyan University",
+						"city": "Middletown, CT"
+					},
+					"program": [
+						{
+							"composer": "Lecture Series",
+							"title": "A Hitchhiker's Guide to Writing for Percussion"
+						}
+					]
+				},
+				{
+					"date": "April 2",
+					"location": {
+						"venue": "Ecstatic Music Festival",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Xiu Xiu",
+							"title": "Extinction Meditation"
+						}
+					]
+				},
+				{
+					"date": "March 1",
+					"location": {
+						"venue": "Music on the Edge",
+						"city": "Pittsburgh, PA"
+					},
+					"program": [
+						{
+							"composer": "Mathew Rosenblum",
+							"title": "Ostatnia Runda"
+						}
+					]
+				},
+				{
+					"date": "February 28",
+					"location": {
+						"venue": "Music on the Edge",
+						"city": "Pittsburgh, PA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "February 27",
+					"location": {
+						"venue": "Avant Media Festival",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Paula Matthusen",
+							"title": "showing and hiding / showing and vanishing"
+						}
+					]
+				},
+				{
+					"date": "January 16",
+					"location": {
+						"venue": "Arts Brookfield - Winter Garden",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Sam Pluta",
+							"title": "Four Sixes"
+						},
+						{
+							"composer": "Alex Mincek",
+							"title": "Coalescent Interference"
+						},
+						{
+							"composer": "Eric Wubbels",
+							"title": "Points of Focus"
+						}
+					]
+				},
+				{
+					"date": "January 15",
+					"location": {
+						"venue": "Arts Brookfield - Winter Garden",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Ian Williams",
+							"title": "Public Transaction"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2014",
+			"concerts": [
+				{
+					"date": "September 18",
+					"location": {
+						"venue": "So Percussion Studio",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Ian Williams",
+							"title": "Public Transaction (excerpt)"
+						},
+						{
+							"composer": "Sam Pluta",
+							"title": "Four Sixes"
+						}
+					]
+				},
+				{
+					"date": "September 12",
+					"location": {
+						"venue": "Third Angle",
+						"city": "Portland, OR"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "June 22",
+					"location": {
+						"venue": "Bang on a Can Marathon",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "May 28",
+					"location": {
+						"venue": "Mutek Festival",
+						"city": "Montreal, QB"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "May 24",
+					"location": {
+						"venue": "The Stone",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Susie Ibarra and Brian Chase",
+							"title": "works"
+						}
+					]
+				},
+				{
+					"date": "May 2-3",
+					"location": {
+						"venue": "Experiments in Opera, Abrons Arts Center",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "Brother Brother"
+						}
+					]
+				},
+				{
+					"date": "April 21",
+					"location": {
+						"venue": "MATA Festival, The Kitchen",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Lisa Streich",
+							"title": "Play Time"
+						},
+						{
+							"composer": "Daniel Wohl",
+							"title": "Progression"
+						},
+						{
+							"composer": "David Bird",
+							"title": "Fields"
+						}
+					]
+				},
+				{
+					"date": "April 12",
+					"location": {
+						"venue": "Fast Forward Austin",
+						"city": "Austin, TX"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "April 14",
+					"location": {
+						"venue": "Southern Methodist University",
+						"city": "Dallas, TX"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "April 15",
+					"location": {
+						"venue": "Louisiana Tech",
+						"city": "Ruston, LA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "April 16",
+					"location": {
+						"venue": "University of New Orleans",
+						"city": "New Orleans, LA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "April 17",
+					"location": {
+						"venue": "Southeastern State University",
+						"city": "Hammond, LA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "March 30",
+					"location": {
+						"venue": "",
+						"city": "Reading, PA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "January 25",
+					"location": {
+						"venue": "Arts at the Park",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "Science is Always a Sometimes Friend"
+						},
+						{
+							"composer": "Tristan Perich",
+							"title": "Moment of Inertia"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2013",
+			"concerts": [
+				{
+					"date": "October 26",
+					"location": {
+						"venue": "Wesleyan University",
+						"city": "Middletown, CT"
+					},
+					"program": [
+						{
+							"composer": "Paula Matthusen",
+							"title": "So Much of Any Year is Flammable"
+						}
+					]
+				},
+				{
+					"date": "September 8",
+					"location": {
+						"venue": "Noguchi Museum",
+						"city": "Queens, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "June 29-30",
+					"location": {
+						"venue": "River to River Festival: ECSTATIC Summer",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"description": "new works for percussion ensemble by Greg Saunier (Deerhoof), Reggie Pace (Bon Iver), Dave Douglas, Susie Ibarra, Seth Olinsky (Akron/Family), People Get Ready, Holly Herndon, and Son Lux"
+						}
+					]
+				},
+				{
+					"date": "June 21",
+					"location": {
+						"venue": "Make Music New York",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Cornelius Cardew",
+							"title": "The Great Learning"
+						}
+					]
+				},
+				{
+					"date": "May 19",
+					"location": {
+						"venue": "Queens New Music Festival",
+						"city": "Queens, NY"
+					},
+					"program": [
+						{
+							"description": "selections from 3Nights :: Paula Matthusen, Daniel Wohl, and Zs"
+						}
+					]
+				},
+				{
+					"date": "May 16-18",
+					"location": {
+						"venue": "Music at First",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"description": "3Nights :: Paula Matthusen, Daniel Wohl, and Zs"
+						}
+					]
+				},
+				{
+					"date": "May 4",
+					"location": {
+						"venue": "Drogheda Arts Festival",
+						"city": "Louth, Ireland"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "April 30",
+					"location": {
+						"venue": "Roulette",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"description": "Timber REMIXED with Ikue Mori, Ian Williams, Brandon Seabrook, Jeremiah Cymerman"
+						}
+					]
+				},
+				{
+					"date": "March 9",
+					"location": {
+						"venue": "Vancouver New Music",
+						"city": "Vancouver, BC"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2012",
+			"concerts": [
+				{
+					"date": "December 13-15",
+					"location": {
+						"venue": "Brooklyn Academy of Music's 30th Next Wave Festival",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "September 23",
+					"location": {
+						"venue": "Carlsbad New Music Festival",
+						"city": "Carlsbad, CA"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "Science Is Only A Sometimes Friend"
+						}
+					]
+				},
+				{
+					"date": "September 22",
+					"location": {
+						"venue": "Carlsbad New Music Festival",
+						"city": "Carlsbad, CACarlsbad,CA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "September 20",
+					"location": {
+						"venue": "The Wulf",
+						"city": "Los Angeles, CA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "September 19",
+					"location": {
+						"venue": "Chapman University",
+						"city": "Orange County, CA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "September 18",
+					"location": {
+						"venue": "CalArts",
+						"city": "Valencia, CA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "May 31 - June 2",
+					"location": {
+						"venue": "Music at First",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"description": "3Nights :: Tristan Perich, Aaron Siegel, and Ted Hearne"
+						}
+					]
+				},
+				{
+					"date": "April 21",
+					"location": {
+						"venue": "New Music New College",
+						"city": "Sarasota, Fl"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "April 3",
+					"location": {
+						"venue": "Caldwell College",
+						"city": "Caldwell, NJ"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						},
+						{
+							"composer": "Iannis Xenakis",
+							"title": "Okho"
+						}
+					]
+				},
+				{
+					"date": "January 19",
+					"location": {
+						"venue": "Mobtown Arts",
+						"city": "Baltimore, MD"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2011",
+			"concerts": [
+				{
+					"date": "November 12",
+					"location": {
+						"venue": "MIT - Kresge Auditorium",
+						"city": "Boston, MA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "November 11",
+					"location": {
+						"venue": "Crane Arts Center",
+						"city": "Philadelphia, PA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "November 10",
+					"location": {
+						"venue": "Indianapolis Artsgarden",
+						"city": "Indianapolis, IN"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "November 9",
+					"location": {
+						"venue": "Percussive Arts Society International Convention",
+						"city": "Indianapolis, IN"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "October 22",
+					"location": {
+						"venue": "X Avant Festival",
+						"city": "Toronto, CA"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "October 20",
+					"location": {
+						"venue": "SUNY Buffalo",
+						"city": "Buffalo, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "October 19",
+					"location": {
+						"venue": "Village Gate",
+						"city": "Rochester, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "October 18",
+					"location": {
+						"venue": "The Yellow Barn",
+						"city": "Ann Arbor, MI"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "October 17",
+					"location": {
+						"venue": "University Of Northern Illinois",
+						"city": "Dekalb, IL"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "October 16",
+					"location": {
+						"venue": "Elastic Arts",
+						"city": "Chicago, IL"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber"
+						}
+					]
+				},
+				{
+					"date": "October 14",
+					"location": {
+						"venue": "Bowling Green State University",
+						"city": "Bowling Green, OH"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (US Premiere)"
+						}
+					]
+				},
+				{
+					"date": "October 10",
+					"location": {
+						"venue": "Stony Brook University",
+						"city": "Stony Brook, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (workshop)"
+						}
+					]
+				},
+				{
+					"date": "October 3",
+					"location": {
+						"venue": "William Patterson University",
+						"city": "Patterson, NJ"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (workshop)"
+						}
+					]
+				},
+				{
+					"date": "August 9",
+					"location": {
+						"venue": "Apple Store Lincoln Center",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (excerpt)"
+						}
+					]
+				},
+				{
+					"date": "June 21",
+					"location": {
+						"venue": "Morningside Park",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "John Luther Adams",
+							"title": "Inuksuit"
+						}
+					]
+				},
+				{
+					"date": "May 17",
+					"location": {
+						"venue": "Bang On A Can Benefit",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (excerpt)"
+						}
+					]
+				},
+				{
+					"date": "April 28",
+					"location": {
+						"venue": "Littlefield",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (preview)"
+						}
+					]
+				},
+				{
+					"date": "April 8",
+					"location": {
+						"venue": "Music At First",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (preview)"
+						}
+					]
+				},
+				{
+					"date": "March 24",
+					"location": {
+						"venue": "Purchase College",
+						"city": "Purchase, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (workshop)"
+						}
+					]
+				},
+				{
+					"date": "February 14",
+					"location": {
+						"venue": "Pratt Institute, School of Architecture",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (workshop)"
+						}
+					]
+				},
+				{
+					"date": "February 11",
+					"location": {
+						"venue": "Manhattan School of Music",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (workshop)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2010",
+			"concerts": [
+				{
+					"date": "September 16",
+					"location": {
+						"venue": "Queens College",
+						"city": "Flushing, NY"
+					},
+					"program": [
+						{
+							"composer": "Michael Gordon",
+							"title": "Timber (workshop)"
+						}
+					]
+				},
+				{
+					"date": "September 25",
+					"location": {
+						"venue": "Irondale Center - New Music Bake Sale",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Eric KM Clark",
+							"title": "Deprivation Music"
+						}
+					]
+				},
+				{
+					"date": "June 21",
+					"location": {
+						"venue": "Make Music New York",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Aleksei Stevens",
+							"title": "if when without itself"
+						},
+						{
+							"composer": "Iannis Xenakis",
+							"title": "Okho"
+						}
+					]
+				},
+				{
+					"date": "June 12",
+					"location": {
+						"venue": "The Invisible Dog Art Center",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"composer": "Aleksei Stevens",
+							"title": "if when without itself"
+						},
+						{
+							"composer": "Iannis Xenakis",
+							"title": "Okho"
+						}
+					]
+				},
+				{
+					"date": "April 15",
+					"location": {
+						"venue": "The Tank",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"description": "new works by Daniel Wohl and Philip Schuessler for percussion/guitar octet"
+						}
+					]
+				},
+				{
+					"date": "March 31",
+					"location": {
+						"venue": "Sarah Lawrence College",
+						"city": "Bronxville, NY"
+					},
+					"program": [
+						{
+							"description": "new works by Daniel Wohl and Philip Schuessler for percussion/guitar octet"
+						}
+					]
+				}
+			]
+		},
+		{
+			"year": "2009",
+			"concerts": [
+				{
+					"date": "September 12",
+					"location": {
+						"venue": "Le Poisson Rouge",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Steve Reich",
+							"title": "Music for 18 Musicians"
+						}
+					]
+				},
+				{
+					"date": "September 3",
+					"location": {
+						"venue": "Littlefield",
+						"city": "Brooklyn, NY"
+					},
+					"program": [
+						{
+							"description": "Music by George Crumb"
+						}
+					]
+				},
+				{
+					"date": "June 21",
+					"location": {
+						"venue": "Make Music New York",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"composer": "Aaron Siegel",
+							"title": "Science is Only a Sometimes Friend"
+						}
+					]
+				},
+				{
+					"date": "May 19",
+					"location": {
+						"venue": "St. Peter's Church",
+						"city": "New York, NY"
+					},
+					"program": [
+						{
+							"description": "premieres for percussion sextet by Erik Km Clark, Aaron Siegel, Craig Woodward"
+						}
+					]
+				}
+			]
+		}
+	]
+}

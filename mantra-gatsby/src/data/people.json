@@ -1,0 +1,129 @@
+[
+	{
+		"program": "Administration",
+		"staff": [
+			{
+				"name": "Miguel Bolivar",
+				"roles": ["Executive Director"]
+			},
+			{
+				"name": "Joseph Bergen",
+				"roles": [
+					"Co-Artistic Director",
+					"Mantra Youth Percussion Instructional Staff"
+				]
+			},
+			{
+				"name": "Michael McCurdy",
+				"roles": ["Co-Artistic Director"]
+			},
+			{
+				"name": "Mark Utley",
+				"roles": ["Web Development and Design"]
+			},
+			{
+				"name": "Jazmine Andes",
+				"roles": ["Social Media & Marketing"]
+			},
+			{
+				"name": "Joseph Brown",
+				"roles": ["Mantra Youth Percussion Director"]
+			},
+			{
+				"name": "Jessica Bergen",
+				"roles": ["Mantra Youth Percussion Recruitment Coordinator"]
+			},
+			{
+				"name": "James Bogert",
+				"roles": ["Mantra Youth Percussion Instructional Staff"]
+			},
+			{
+				"name": "Taylor Furman",
+				"roles": ["Mantra Youth Percussion Instructional Staff"]
+			},
+			{
+				"name": "Aaliyah Geiger",
+				"roles": ["Intern"]
+			},
+			{
+				"name": "Serena Huang",
+				"roles": ["Intern"]
+			},
+			{
+				"name": "Deivy Mejia",
+				"roles": ["Intern"]
+			}
+		]
+	},
+	{
+		"program": "Mantra Percussion",
+		"staff": [
+			{
+				"name": "Joseph Bergen",
+				"roles": []
+			},
+			{
+				"name": "Christopher Graham",
+				"roles": []
+			},
+			{
+				"name": "Mika Godbole",
+				"roles": []
+			},
+			{
+				"name": "Michael McCurdy",
+				"roles": []
+			},
+			{
+				"name": "Mark Utley",
+				"roles": []
+			}
+		]
+	},
+	{
+		"program": "Recap",
+		"staff": [
+			{
+				"name": "Arlene Acevedo",
+				"roles": []
+			},
+			{
+				"name": "Alexis Carter",
+				"roles": []
+			},
+			{
+				"name": "Tiahna Sterling",
+				"roles": []
+			},
+			{
+				"name": "Aline Vasquez",
+				"roles": []
+			}
+		]
+	},
+	{
+		"program": "Mantra Percussion Emeritus",
+		"staff": [
+			{
+				"name": "Al Cerulo",
+				"roles": []
+			},
+			{
+				"name": "Jude Traxler",
+				"roles": []
+			},
+			{
+				"name": "Owen Weaver",
+				"roles": []
+			},
+			{
+				"name": "Nick Woodbury",
+				"roles": []
+			},
+			{
+				"name": "Matt Kantorski",
+				"roles": []
+			}
+		]
+	}
+]
