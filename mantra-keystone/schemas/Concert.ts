@@ -13,6 +13,12 @@ export const LocationSchema = list({
     venue: text(),
     city: text(),
     support: text()
+  },
+  ui: {
+    labelField: 'venue',
+    listView: {
+      initialColumns: ['venue', 'city']
+    }
   }
 })
 
@@ -22,6 +28,11 @@ export const PieceSchema = list({
     title: text(),
     description: text(),
     support: text()
+  },
+  ui: {
+    listView: {
+      initialColumns: ['title', 'composer', 'description']
+    }
   }
 })
 
@@ -32,5 +43,11 @@ export const ConcertSchema = list({
     group: groupSelect,
     location: relationship({ ref: 'Location', many: false }),
     program: relationship({ ref: 'Piece', many: true }),
+  },
+  ui: {
+    listView: {
+      initialColumns: ['date', 'group', 'location', 'program'],
+      initialSort: { field: 'date', direction: 'DESC' }
+    }
   }
 })
