@@ -69,13 +69,27 @@ const getProgramPieces = async (context: KeystoneContext<BaseKeystoneTypeInfo>, 
   return Promise.all(promises)
 }
 
+const getConcertDates = (date: string, year: string) => {
+  if (date.includes('-')) {
+    const [month, dayRange] = date.split(' ')
+    const [from, to] = dayRange.split('-')
+    return [
+      new Date(`$${month} ${from}, ${year}`).toISOString(),
+      new Date(`$${month} ${to}, ${year}`).toISOString()
+    ]
+  }
+  const dateString = new Date(`${date}, ${year}`).toISOString()
+  return [dateString, dateString]
+}
+
 const seedConcertYear = (context: KeystoneContext<BaseKeystoneTypeInfo>, group: string) => async ({ year, concerts }: { year: string, concerts: any[] }) => {
   Promise.all(concerts.map(async ({ date, location, program }) => {
-    const concertDate = new Date(`${date}, ${year}`).toISOString()
+    const [dateFrom, dateTo] = getConcertDates(date, year)
+
     const pieces = await getProgramPieces(context, program)
     const [concertLocation] = await context.db.Location.findMany({ where: { venue: { equals: location.venue } } })
     const locationInput = concertLocation ? { connect: { id: concertLocation.id } } : { create: location }
-    context.db.Concert.createOne({ data: { group, date: concertDate, program: { connect: pieces }, location: locationInput } })
+    context.db.Concert.createOne({ data: { group, dateFrom, dateTo, program: { connect: pieces }, location: locationInput } })
   }))
 }
 

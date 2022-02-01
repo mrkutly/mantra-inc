@@ -79,13 +79,15 @@ model TeamMemberRole {
 model Concert {
   id         String    @id @default(uuid()) @postgresql.Uuid
   createdAt  DateTime? @default(now()) @map("created_at")
-  date       DateTime?
+  dateFrom   DateTime?
+  dateTo     DateTime?
   group      String
   location   Location? @relation("Concert_location", fields: [locationId], references: [id])
   locationId String?   @map("location") @postgresql.Uuid
   program    Piece[]   @relation("Concert_program")
 
-  @@index([date])
+  @@index([dateFrom])
+  @@index([dateTo])
   @@index([group])
   @@index([locationId])
 }

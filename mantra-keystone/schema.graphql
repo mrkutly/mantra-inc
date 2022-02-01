@@ -472,7 +472,8 @@ input TeamMemberRoleCreateInput {
 type Concert {
   id: ID!
   createdAt: DateTime
-  date: DateTime
+  dateFrom: DateTime
+  dateTo: DateTime
   group: String
   location: Location
   program(
@@ -494,7 +495,8 @@ input ConcertWhereInput {
   NOT: [ConcertWhereInput!]
   id: IDFilter
   createdAt: DateTimeNullableFilter
-  date: DateTimeNullableFilter
+  dateFrom: DateTimeNullableFilter
+  dateTo: DateTimeNullableFilter
   group: StringFilter
   location: LocationWhereInput
   program: PieceManyRelationFilter
@@ -509,13 +511,15 @@ input PieceManyRelationFilter {
 input ConcertOrderByInput {
   id: OrderDirection
   createdAt: OrderDirection
-  date: OrderDirection
+  dateFrom: OrderDirection
+  dateTo: OrderDirection
   group: OrderDirection
 }
 
 input ConcertUpdateInput {
   createdAt: DateTime
-  date: DateTime
+  dateFrom: DateTime
+  dateTo: DateTime
   group: String
   location: LocationRelateToOneForUpdateInput
   program: PieceRelateToManyForUpdateInput
@@ -541,7 +545,8 @@ input ConcertUpdateArgs {
 
 input ConcertCreateInput {
   createdAt: DateTime
-  date: DateTime
+  dateFrom: DateTime
+  dateTo: DateTime
   group: String
   location: LocationRelateToOneForCreateInput
   program: PieceRelateToManyForCreateInput

@@ -22,7 +22,8 @@ export interface CalendarNode {
 }
 
 export interface Concert {
-	date: string
+	dateFrom: string
+	dateTo: string
 	location: {
 		city: string
 		support: string

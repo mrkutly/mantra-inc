@@ -39,15 +39,16 @@ export const PieceSchema = list({
 export const ConcertSchema = list({
   fields: {
     createdAt: timestamp({ isOrderable: true, db: { map: 'created_at' }, defaultValue: { kind: 'now' } }),
-    date: timestamp({ isOrderable: true, isFilterable: true, isIndexed: true }),
+    dateFrom: timestamp({ isOrderable: true, isFilterable: true, isIndexed: true }),
+    dateTo: timestamp({ isOrderable: true, isFilterable: true, isIndexed: true }),
     group: groupSelect,
     location: relationship({ ref: 'Location', many: false }),
     program: relationship({ ref: 'Piece', many: true }),
   },
   ui: {
     listView: {
-      initialColumns: ['date', 'group', 'location', 'program'],
-      initialSort: { field: 'date', direction: 'DESC' }
+      initialColumns: ['dateFrom', 'dateTo', 'group', 'location', 'program'],
+      initialSort: { field: 'dateFrom', direction: 'DESC' }
     }
   }
 })

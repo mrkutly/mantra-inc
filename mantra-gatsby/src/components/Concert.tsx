@@ -28,8 +28,10 @@ interface ConcertProps {
 }
 
 const Concert = ({ concert }: ConcertProps) => {
-	const { date, location, program } = concert
-	const formattedDate = new Date(date).toLocaleDateString('en-US', { day: 'numeric', month: 'short' })
+	const { dateFrom, dateTo, location, program } = concert
+	const formattedDateFrom = new Date(dateFrom).toLocaleDateString('en-US', { day: 'numeric', month: 'short' })
+	const formattedDateTo = new Date(dateTo).toLocaleDateString('en-US', { day: 'numeric', month: 'short' })
+	const formattedDate = formattedDateTo === formattedDateFrom ? formattedDateFrom : `${formattedDateFrom} - ${formattedDateTo}`
 	return (
 		<ConcertStyles>
 			<h2>

@@ -12,7 +12,8 @@ import { colorChange } from './styles/animations'
 
 export const SCHEDULE_FRAGMENT = graphql`
 	fragment Schedule on API_Concert {
-		date 
+		dateFrom 
+		dateTo 
 		location {
 			venue 
 			city 
@@ -58,7 +59,7 @@ const Calendar = () => {
 	const [group, setGroup] = useState<'mantra' | 'mantraYouth' | 'recap'>('mantra')
 	const grouped = useMemo(() => {
 		console.log(api)
-		const groupedByYear = groupBy((x: IConcert) => String(new Date(x.date).getFullYear()))
+		const groupedByYear = groupBy((x: IConcert) => String(new Date(x.dateFrom).getFullYear()))
 		return groupedByYear(api[group])
 	}, [group])
 	const thisYear = String(new Date(Date.now()).getFullYear())
