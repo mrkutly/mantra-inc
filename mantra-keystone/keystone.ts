@@ -18,8 +18,7 @@ import { Config } from './config';
 export default withAuth(
   // Using the config function helps typescript guide you to the available options.
   config({
-    // the db sets the database provider - we're using sqlite for the fastest startup experience
-    db: Config.db,
+    ...Config,
     // This config allows us to set up features of the Admin UI https://keystonejs.com/docs/apis/config#ui
     ui: {
       // For our starter, we check that someone has session data before letting them see the Admin UI.
