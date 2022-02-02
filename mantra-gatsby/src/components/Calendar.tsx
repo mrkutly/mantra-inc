@@ -58,10 +58,9 @@ const Calendar = () => {
 	const { api } = useStaticQuery<CalendarResult>(CALENDAR_QUERY)
 	const [group, setGroup] = useState<'mantra' | 'mantraYouth' | 'recap'>('mantra')
 	const grouped = useMemo(() => {
-		console.log(api)
 		const groupedByYear = groupBy((x: IConcert) => String(new Date(x.dateFrom).getFullYear()))
 		return groupedByYear(api[group])
-	}, [group])
+	}, [group, api])
 	const thisYear = String(new Date(Date.now()).getFullYear())
 	const [year, setYear] = useState(thisYear)
 
