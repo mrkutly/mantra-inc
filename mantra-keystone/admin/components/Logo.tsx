@@ -10,6 +10,8 @@ export const Logo = () => {
     WebkitTextFillColor: 'transparent',
     ":hover": {
       background: 'linear-gradient(90deg, #EE2F9E 0%, #BC2FEE 100%)',
+      backgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
     }
   }}
     href="https://mantrapercussion.org"
