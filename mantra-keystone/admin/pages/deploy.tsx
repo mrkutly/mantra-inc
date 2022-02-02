@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const deploySite = async () => {
-  const buildHookUrl = process.env.BUILD_HOOK_URL
+  const buildHookUrl = process.env.REACT_APP_BUILD_HOOK_URL
   if (!buildHookUrl) return { ok: false }
 
   return fetch(buildHookUrl, { method: 'POST' })
