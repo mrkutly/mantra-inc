@@ -8,8 +8,10 @@ export const Logo = () => {
     backgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     textDecoration: 'none',
+    fontSize: '24px',
+    fontWeight: '600',
     ":hover": {
-      background: 'linear-gradient(90deg, #EE2F9E 0%, #BC2FEE 100%)',
+      background: 'linear-gradient(to right, #390073, #E0C6FF)',
       backgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       textDecoration: 'none',

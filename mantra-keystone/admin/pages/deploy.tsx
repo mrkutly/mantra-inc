@@ -86,7 +86,7 @@ const Deploy = () => {
     }
   }
 
-  return <PageContainer header="Deploy Website">
+  return <PageContainer header={<h3>Deploy Website</h3>}>
     <div style={{ margin: '24px' }}>
 
       {renderContent()}
