@@ -1,8 +1,9 @@
 import { PageContainer } from '@keystone-6/core/admin-ui/components'
 import React, { useState } from 'react'
+import process from 'process'
 
 const deploySite = async () => {
-  const buildHookUrl = process.env.REACT_APP_BUILD_HOOK_URL
+  const buildHookUrl = process.env.NEXT_PUBLIC_BUILD_HOOK_URL
   if (!buildHookUrl) return { ok: false }
 
   return fetch(buildHookUrl, { method: 'POST' })
