@@ -1,3 +1,4 @@
+import { PageContainer } from '@keystone-6/core/admin-ui/components'
 import React, { useState } from 'react'
 
 const deploySite = async () => {
@@ -44,7 +45,7 @@ const Deploy = () => {
     }
   }
 
-  return <div>{renderContent()}</div>
+  return <PageContainer header="Deploy Website">{renderContent()}</PageContainer>
 }
 
 export default Deploy
