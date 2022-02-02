@@ -1,6 +1,5 @@
 import { BaseKeystoneTypeInfo, KeystoneContext, } from "@keystone-6/core/types";
 import { chain } from 'lodash';
-import { Group } from "../types";
 import { albumSeeds } from "./data/albums";
 import { articleSeeds } from "./data/articles";
 import { concertSeeds } from "./data/concerts";
