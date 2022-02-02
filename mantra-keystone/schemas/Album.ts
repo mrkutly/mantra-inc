@@ -1,5 +1,3 @@
-import { list } from '@keystone-6/core';
-
 import {
   text,
   timestamp,
@@ -9,8 +7,9 @@ import {
 import { AlbumHost } from '../types';
 import { groupSelect } from './helpers/fields';
 import { urlMatch } from './helpers/matchers';
+import { readonlyList } from './helpers/readonlyList';
 
-export const AlbumSchema = list({
+export const AlbumSchema = readonlyList({
   fields: {
     createdAt: timestamp({ isOrderable: true, db: { map: 'created_at' }, defaultValue: { kind: 'now' } }),
     group: groupSelect,

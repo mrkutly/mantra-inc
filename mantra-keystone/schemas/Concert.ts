@@ -1,5 +1,3 @@
-import { list } from '@keystone-6/core';
-
 import {
   relationship,
   text,
@@ -7,8 +5,9 @@ import {
 } from '@keystone-6/core/fields';
 
 import { groupSelect } from './helpers/fields';
+import { readonlyList } from './helpers/readonlyList';
 
-export const LocationSchema = list({
+export const LocationSchema = readonlyList({
   fields: {
     venue: text(),
     city: text(),
@@ -22,7 +21,7 @@ export const LocationSchema = list({
   }
 })
 
-export const PieceSchema = list({
+export const PieceSchema = readonlyList({
   fields: {
     composer: text(),
     title: text(),
@@ -36,7 +35,7 @@ export const PieceSchema = list({
   }
 })
 
-export const ConcertSchema = list({
+export const ConcertSchema = readonlyList({
   fields: {
     createdAt: timestamp({ isOrderable: true, db: { map: 'created_at' }, defaultValue: { kind: 'now' } }),
     dateFrom: timestamp({ isOrderable: true, isFilterable: true, isIndexed: true }),

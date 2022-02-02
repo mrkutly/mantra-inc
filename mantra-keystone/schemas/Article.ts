@@ -1,5 +1,3 @@
-import { list } from '@keystone-6/core';
-
 import {
   text,
   timestamp,
@@ -7,8 +5,9 @@ import {
 
 import { groupSelect } from './helpers/fields';
 import { urlMatch } from './helpers/matchers';
+import { readonlyList } from './helpers/readonlyList';
 
-export const ArticleSchema = list({
+export const ArticleSchema = readonlyList({
   fields: {
     createdAt: timestamp({ isOrderable: true, db: { map: 'created_at' }, defaultValue: { kind: 'now' } }),
     group: groupSelect,
@@ -22,5 +21,5 @@ export const ArticleSchema = list({
         match: urlMatch,
       }
     }),
-  }
+  },
 })

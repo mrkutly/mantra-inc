@@ -1,11 +1,10 @@
-import { list } from '@keystone-6/core';
-
 import {
   text,
   password,
 } from '@keystone-6/core/fields';
+import { readonlyList } from './helpers/readonlyList';
 
-export const UserSchema = list({
+export const UserSchema = readonlyList({
   fields: {
     name: text({ validation: { isRequired: true } }),
     email: text({
