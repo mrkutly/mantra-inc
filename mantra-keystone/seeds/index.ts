@@ -1,4 +1,4 @@
-import { BaseKeystoneTypeInfo, KeystoneContext } from "@keystone-6/core/types";
+import { BaseKeystoneTypeInfo, KeystoneContext, } from "@keystone-6/core/types";
 import { chain } from 'lodash';
 import { Group } from "../types";
 import { albumSeeds } from "./data/albums";
@@ -9,27 +9,25 @@ import { pieceSeeds } from "./data/pieces";
 import { teamSeeds } from "./data/teams";
 import { videoSeeds } from "./data/videos";
 
-const seedAlbums = async (context: KeystoneContext<BaseKeystoneTypeInfo>) => {
-  const albums = await context.db.Album.findMany()
-  if (albums.length === 0) {
-    await context.db.Album.createMany({ data: albumSeeds })
+const seedCollection = <T>(collection: string, seeds: T[]) => async (context: KeystoneContext<BaseKeystoneTypeInfo>) => {
+  const values = await context.db[collection].findMany()
+
+  if (values.length === 0) {
+    const datedSeeds = seeds.map((seed, idx) => {
+      const createdAt = new Date(Date.now() - (idx * 100000)).toISOString()
+      return {
+        ...seed,
+        createdAt,
+      }
+    })
+
+    await context.db[collection].createMany({ data: datedSeeds })
   }
 }
 
-const seedArticles = async (context: KeystoneContext<BaseKeystoneTypeInfo>) => {
-  const articles = await context.db.Article.findMany()
-  if (articles.length === 0) {
-    await context.db.Article.createMany({ data: articleSeeds })
-  }
-}
-
-const seedVideos = async (context: KeystoneContext<BaseKeystoneTypeInfo>) => {
-  const videos = await context.db.Video.findMany()
-  if (videos.length === 0) {
-    await context.db.Video.createMany({ data: videoSeeds })
-  }
-}
-
+const seedAlbums = seedCollection('Album', albumSeeds)
+const seedArticles = seedCollection('Article', articleSeeds)
+const seedVideos = seedCollection('Video', videoSeeds)
 const seedTeams = async (context: KeystoneContext<BaseKeystoneTypeInfo>) => {
   const teams = await context.db.Team.findMany()
   if (teams.length === 0) {
