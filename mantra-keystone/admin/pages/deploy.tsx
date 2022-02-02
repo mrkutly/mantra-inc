@@ -1,3 +1,6 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@keystone-ui/core'
 import { PageContainer } from '@keystone-6/core/admin-ui/components'
 import React, { useState } from 'react'
 import process from 'process'
@@ -15,6 +18,40 @@ enum Status {
   Error = 'error',
   Success = 'success',
 }
+
+const buttonCss = {
+  alignItems: 'center',
+  borderStyle: 'solid',
+  boxSizing: 'border-box',
+  cursor: 'pointer',
+  display: 'inline-flex',
+  flexShrink: 0,
+  justifyContent: 'center',
+  outline: 0,
+  position: 'relative',
+  userSelect: 'none',
+  whiteSpace: 'nowrap',
+  backgroundColor: '#2563eb',
+  borderColor: 'transparent',
+  borderRadius: '4px',
+  borderWidth: '1px',
+  color: '#ffffff',
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  height: '32px',
+  paddingLeft: '12px',
+  paddingRight: '12px',
+  ':active': {
+    background: '#1e40af',
+  },
+  ':hover': {
+    background: '#1d4ed8',
+  },
+  ':focus': {
+    boxShadow: '0 0 0 2px #bfdbfe',
+  }
+} as any
+
 const Deploy = () => {
   const [status, setStatus] = useState<Status>(Status.Idle)
 
@@ -33,7 +70,10 @@ const Deploy = () => {
   const renderContent = () => {
     switch (status) {
       case Status.Idle:
-        return <button onClick={handleClick}>Deploy the Site!</button>
+        return (<div>
+          <p>To rebuild the site with updated data, click the button below.</p>
+          <button type="button" css={buttonCss} onClick={handleClick}>Deploy the Site!</button>
+        </div>)
 
       case Status.Error:
         return <p>Well that didn't work. Tell Mark about it.</p>
@@ -46,7 +86,12 @@ const Deploy = () => {
     }
   }
 
-  return <PageContainer header="Deploy Website">{renderContent()}</PageContainer>
+  return <PageContainer header="Deploy Website">
+    <div style={{ margin: '24px' }}>
+
+      {renderContent()}
+    </div>
+  </PageContainer>
 }
 
 export default Deploy
