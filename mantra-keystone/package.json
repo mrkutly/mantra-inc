@@ -11,9 +11,10 @@
     "db:reset": "keystone dev --reset-db"
   },
   "dependencies": {
-    "@keystone-6/auth": "^1.0.1",
-    "@keystone-6/core": "^1.0.1",
-    "@keystone-6/fields-document": "^1.0.1",
+    "@keystone-6/auth": "^2.0.0",
+    "@keystone-6/core": "^1.1.0",
+    "@keystone-6/fields-document": "^2.0.0",
+    "@keystonejs/fields-wysiwyg-tinymce": "^5.4.2",
     "g": "^2.0.1",
     "keystone": "^4.2.1",
     "lodash": "^4.17.21",
