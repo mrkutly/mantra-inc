@@ -5,6 +5,7 @@ import { ConcertSchema, LocationSchema, PieceSchema } from './schemas/Concert';
 import { TeamMemberRoleSchema, TeamMemberSchema, TeamSchema } from './schemas/Team';
 import { UserSchema } from './schemas/User';
 import { VideoSchema } from './schemas/Video';
+import { MissionStatementSchema } from './schemas/MissionStatement'
 
 export const lists: Lists = {
   User: UserSchema,
@@ -16,5 +17,6 @@ export const lists: Lists = {
   TeamMemberRole: TeamMemberRoleSchema,
   Concert: ConcertSchema,
   Piece: PieceSchema,
-  Location: LocationSchema
+  Location: LocationSchema,
+  MissionStatement: MissionStatementSchema,
 };

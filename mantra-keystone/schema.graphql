@@ -657,6 +657,48 @@ input LocationCreateInput {
   support: String
 }
 
+type MissionStatement {
+  id: ID!
+  content: MissionStatement_content_Document
+  group: String
+}
+
+type MissionStatement_content_Document {
+  document(hydrateRelationships: Boolean! = false): JSON!
+}
+
+input MissionStatementWhereUniqueInput {
+  id: ID
+}
+
+input MissionStatementWhereInput {
+  AND: [MissionStatementWhereInput!]
+  OR: [MissionStatementWhereInput!]
+  NOT: [MissionStatementWhereInput!]
+  id: IDFilter
+  group: StringFilter
+}
+
+input MissionStatementOrderByInput {
+  id: OrderDirection
+  group: OrderDirection
+}
+
+input MissionStatementUpdateInput {
+  content: JSON
+  group: String
+}
+
+input MissionStatementUpdateArgs {
+  where: MissionStatementWhereUniqueInput!
+  data: MissionStatementUpdateInput!
+}
+
+input MissionStatementCreateInput {
+  content: JSON
+  group: String
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -743,6 +785,23 @@ type Mutation {
   updateLocations(data: [LocationUpdateArgs!]!): [Location]
   deleteLocation(where: LocationWhereUniqueInput!): Location
   deleteLocations(where: [LocationWhereUniqueInput!]!): [Location]
+  createMissionStatement(data: MissionStatementCreateInput!): MissionStatement
+  createMissionStatements(
+    data: [MissionStatementCreateInput!]!
+  ): [MissionStatement]
+  updateMissionStatement(
+    where: MissionStatementWhereUniqueInput!
+    data: MissionStatementUpdateInput!
+  ): MissionStatement
+  updateMissionStatements(
+    data: [MissionStatementUpdateArgs!]!
+  ): [MissionStatement]
+  deleteMissionStatement(
+    where: MissionStatementWhereUniqueInput!
+  ): MissionStatement
+  deleteMissionStatements(
+    where: [MissionStatementWhereUniqueInput!]!
+  ): [MissionStatement]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -853,6 +912,14 @@ type Query {
   ): [Location!]
   location(where: LocationWhereUniqueInput!): Location
   locationsCount(where: LocationWhereInput! = {}): Int
+  missionStatements(
+    where: MissionStatementWhereInput! = {}
+    orderBy: [MissionStatementOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [MissionStatement!]
+  missionStatement(where: MissionStatementWhereUniqueInput!): MissionStatement
+  missionStatementsCount(where: MissionStatementWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }

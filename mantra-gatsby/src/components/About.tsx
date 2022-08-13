@@ -81,26 +81,12 @@ const About = () => {
 						<Image fluid={data.bandImage.childImageSharp.fluid} />
 					</ImageContainer>
 					<p>
-						Mantra Percussion, Inc. is a NYC-based, 501(c)(3) non-profit
-						percussion collective committed to honoring the past and expanding
-						the future of percussion music.
-					</p>
-
-					<p>
-						As an organization we strive to engage international audiences by
-						challenging what it means to communicate music through percussion
-						instruments, and to foster high-level musicianship for underserved
-						and underrepresented youth in new music, developing unique and
-						equitable music communities.
-					</p>
-					<p>
-						Our aim is to bring to life new works for percussion by living
-						composers and creators from across the social spectrum —
-						establishing long-lasting relationships with our collaborators. From
-						our inception we have almost exclusively performed works written for
-						the group. We travel around our block and the world as ambassadors
-						of our repertoire, giving dozens of performances of the works we
-						commission.
+						Mantra Percussion, Inc. is a future-focused arts organization committed{' '}
+						to a lasting influence on percussion music, developing unique and{' '}
+						equitable music communities through the art of percussion, fostering{' '}
+						high-level musicianship for underserved and underrepresented youth in new music,{' '}
+						and engaging audiences by challenging the standard concert format through evening-length{' '}
+						events that look toward a grander artistic vision.
 					</p>
 				</ContentStyles>
 
