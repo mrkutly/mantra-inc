@@ -108,3 +108,11 @@ model Location {
   support               String    @default("")
   from_Concert_location Concert[] @relation("Concert_location")
 }
+
+model MissionStatement {
+  id      String @id @default(uuid()) @postgresql.Uuid
+  content Json   @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+  group   String
+
+  @@index([group])
+}
