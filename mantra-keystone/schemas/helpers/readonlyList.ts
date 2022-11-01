@@ -1,11 +1,13 @@
-import { list, ListConfig } from '@keystone-6/core';
-import { BaseFields, BaseListTypeInfo } from '@keystone-6/core/types';
+import { list } from '@keystone-6/core';
 
 const isLoggedIn = ({ session }: { session: any }) => !!session?.data;
 
-export const readonlyList = (opts: ListConfig<BaseListTypeInfo, BaseFields<BaseListTypeInfo>>) => {
+type First<T extends unknown[]> = T extends [infer U, ...any] ? U : T
+
+export const readonlyList = (opts: Omit<First<Parameters<typeof list>>, 'access'>) => {
   const access = {
     operation: {
+      query: () => true,
       create: isLoggedIn,
       update: isLoggedIn,
       delete: isLoggedIn,

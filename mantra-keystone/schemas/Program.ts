@@ -24,7 +24,10 @@ export const CollaboratorSchema = readonlyList({
 
 export const InstrumentationSchema = readonlyList({
   fields: {
-    instruments: text({ validation: { isRequired: true } }),
+    instruments: text({ validation: { isRequired: true }, }),
+  },
+  ui: {
+    labelField: 'instruments'
   }
 })
 
