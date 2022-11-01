@@ -53,3 +53,5 @@ export interface Video {
 	title: string
 	embed: string
 }
+
+export type Group = 'mantra' | 'recap' | 'mantraYouth'
