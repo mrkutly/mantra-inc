@@ -7,12 +7,12 @@ import {
 	ImageContainer,
 	PageLink,
 } from '../../../components/styles'
-import { Article as ArticleType } from '../../../types'
-import Article from '../../../components/Article'
+import { ConcertProgram } from '../../../types'
 import SectionHeading from '../../../components/SectionHeading'
 import { ImageResult } from '../../../components/About'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
+import { ProgramsList } from '../../../components/ProgramList'
 
 const QUERY = graphql`
 	query {
@@ -23,31 +23,35 @@ const QUERY = graphql`
 				}
 			}
 		}
-		articles: allArticlesJson(filter: { recap: { eq: true } }) {
-			nodes {
+		
+		api {
+			programs(where: { group: { equals: "recap"}}) {
 				id
-				author
-				publication
-				pullQuote
 				title
-				url
+				description
+				link
+				durationInMinutes
+				instrumentations {
+					instruments
+				}
+				collaborators {
+					name
+					role {
+						title
+					}
+				}
 			}
-		}
+		}	
 	}
 `
 
 type Result = {
 	recap: ImageResult
-	articles: {
-		nodes: ArticleType[]
-	}
+	api: { programs: ConcertProgram[] }
 }
 
 const Contact = () => {
-	const { recap, articles } = useStaticQuery<Result>(QUERY)
-	const mappedArticles = articles.nodes.map(article => (
-		<Article article={article} key={article.id} />
-	))
+	const { recap, api: { programs } } = useStaticQuery<Result>(QUERY)
 
 	return (
 		<Layout>
@@ -109,12 +113,8 @@ const Contact = () => {
 									National Parks Service.
 								</p>
 							</div>
-
-							<h1>Press</h1>
-							<PressSection>
-								<ul>{mappedArticles}</ul>
-							</PressSection>
 						</Container>
+						<ProgramsList programs={programs} />
 					</FullScreenCard>
 				</section>
 			</main>
@@ -136,13 +136,6 @@ const Container = styled.div`
 	h1 {
 		font-size: 3.5rem;
 		color: lightblue;
-	}
-`
-
-const PressSection = styled.div`
-	h1 {
-		font-size: 2rem;
-		color: inherit;
 	}
 `
 
