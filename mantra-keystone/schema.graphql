@@ -699,6 +699,253 @@ input MissionStatementCreateInput {
   group: String
 }
 
+type Program {
+  id: ID!
+  createdAt: DateTime
+  group: String
+  title: String
+  durationInMinutes: Int
+  instrumentations(
+    where: InstrumentationWhereInput! = {}
+    orderBy: [InstrumentationOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Instrumentation!]
+  instrumentationsCount(where: InstrumentationWhereInput! = {}): Int
+  description: String
+  collaborators(
+    where: CollaboratorWhereInput! = {}
+    orderBy: [CollaboratorOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Collaborator!]
+  collaboratorsCount(where: CollaboratorWhereInput! = {}): Int
+  link: String
+}
+
+input ProgramWhereUniqueInput {
+  id: ID
+}
+
+input ProgramWhereInput {
+  AND: [ProgramWhereInput!]
+  OR: [ProgramWhereInput!]
+  NOT: [ProgramWhereInput!]
+  id: IDFilter
+  createdAt: DateTimeNullableFilter
+  group: StringFilter
+  title: StringFilter
+  durationInMinutes: IntNullableFilter
+  instrumentations: InstrumentationManyRelationFilter
+  description: StringFilter
+  collaborators: CollaboratorManyRelationFilter
+  link: StringFilter
+}
+
+input IntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: IntNullableFilter
+}
+
+input InstrumentationManyRelationFilter {
+  every: InstrumentationWhereInput
+  some: InstrumentationWhereInput
+  none: InstrumentationWhereInput
+}
+
+input CollaboratorManyRelationFilter {
+  every: CollaboratorWhereInput
+  some: CollaboratorWhereInput
+  none: CollaboratorWhereInput
+}
+
+input ProgramOrderByInput {
+  id: OrderDirection
+  createdAt: OrderDirection
+  group: OrderDirection
+  title: OrderDirection
+  durationInMinutes: OrderDirection
+  description: OrderDirection
+  link: OrderDirection
+}
+
+input ProgramUpdateInput {
+  createdAt: DateTime
+  group: String
+  title: String
+  durationInMinutes: Int
+  instrumentations: InstrumentationRelateToManyForUpdateInput
+  description: String
+  collaborators: CollaboratorRelateToManyForUpdateInput
+  link: String
+}
+
+input InstrumentationRelateToManyForUpdateInput {
+  disconnect: [InstrumentationWhereUniqueInput!]
+  set: [InstrumentationWhereUniqueInput!]
+  create: [InstrumentationCreateInput!]
+  connect: [InstrumentationWhereUniqueInput!]
+}
+
+input CollaboratorRelateToManyForUpdateInput {
+  disconnect: [CollaboratorWhereUniqueInput!]
+  set: [CollaboratorWhereUniqueInput!]
+  create: [CollaboratorCreateInput!]
+  connect: [CollaboratorWhereUniqueInput!]
+}
+
+input ProgramUpdateArgs {
+  where: ProgramWhereUniqueInput!
+  data: ProgramUpdateInput!
+}
+
+input ProgramCreateInput {
+  createdAt: DateTime
+  group: String
+  title: String
+  durationInMinutes: Int
+  instrumentations: InstrumentationRelateToManyForCreateInput
+  description: String
+  collaborators: CollaboratorRelateToManyForCreateInput
+  link: String
+}
+
+input InstrumentationRelateToManyForCreateInput {
+  create: [InstrumentationCreateInput!]
+  connect: [InstrumentationWhereUniqueInput!]
+}
+
+input CollaboratorRelateToManyForCreateInput {
+  create: [CollaboratorCreateInput!]
+  connect: [CollaboratorWhereUniqueInput!]
+}
+
+type Instrumentation {
+  id: ID!
+  instruments: String
+}
+
+input InstrumentationWhereUniqueInput {
+  id: ID
+}
+
+input InstrumentationWhereInput {
+  AND: [InstrumentationWhereInput!]
+  OR: [InstrumentationWhereInput!]
+  NOT: [InstrumentationWhereInput!]
+  id: IDFilter
+  instruments: StringFilter
+}
+
+input InstrumentationOrderByInput {
+  id: OrderDirection
+  instruments: OrderDirection
+}
+
+input InstrumentationUpdateInput {
+  instruments: String
+}
+
+input InstrumentationUpdateArgs {
+  where: InstrumentationWhereUniqueInput!
+  data: InstrumentationUpdateInput!
+}
+
+input InstrumentationCreateInput {
+  instruments: String
+}
+
+type CollaboratorRole {
+  id: ID!
+  title: String
+}
+
+input CollaboratorRoleWhereUniqueInput {
+  id: ID
+}
+
+input CollaboratorRoleWhereInput {
+  AND: [CollaboratorRoleWhereInput!]
+  OR: [CollaboratorRoleWhereInput!]
+  NOT: [CollaboratorRoleWhereInput!]
+  id: IDFilter
+  title: StringFilter
+}
+
+input CollaboratorRoleOrderByInput {
+  id: OrderDirection
+  title: OrderDirection
+}
+
+input CollaboratorRoleUpdateInput {
+  title: String
+}
+
+input CollaboratorRoleUpdateArgs {
+  where: CollaboratorRoleWhereUniqueInput!
+  data: CollaboratorRoleUpdateInput!
+}
+
+input CollaboratorRoleCreateInput {
+  title: String
+}
+
+type Collaborator {
+  id: ID!
+  name: String
+  role: CollaboratorRole
+}
+
+input CollaboratorWhereUniqueInput {
+  id: ID
+}
+
+input CollaboratorWhereInput {
+  AND: [CollaboratorWhereInput!]
+  OR: [CollaboratorWhereInput!]
+  NOT: [CollaboratorWhereInput!]
+  id: IDFilter
+  name: StringFilter
+  role: CollaboratorRoleWhereInput
+}
+
+input CollaboratorOrderByInput {
+  id: OrderDirection
+  name: OrderDirection
+}
+
+input CollaboratorUpdateInput {
+  name: String
+  role: CollaboratorRoleRelateToOneForUpdateInput
+}
+
+input CollaboratorRoleRelateToOneForUpdateInput {
+  create: CollaboratorRoleCreateInput
+  connect: CollaboratorRoleWhereUniqueInput
+  disconnect: Boolean
+}
+
+input CollaboratorUpdateArgs {
+  where: CollaboratorWhereUniqueInput!
+  data: CollaboratorUpdateInput!
+}
+
+input CollaboratorCreateInput {
+  name: String
+  role: CollaboratorRoleRelateToOneForCreateInput
+}
+
+input CollaboratorRoleRelateToOneForCreateInput {
+  create: CollaboratorRoleCreateInput
+  connect: CollaboratorRoleWhereUniqueInput
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -802,6 +1049,56 @@ type Mutation {
   deleteMissionStatements(
     where: [MissionStatementWhereUniqueInput!]!
   ): [MissionStatement]
+  createProgram(data: ProgramCreateInput!): Program
+  createPrograms(data: [ProgramCreateInput!]!): [Program]
+  updateProgram(
+    where: ProgramWhereUniqueInput!
+    data: ProgramUpdateInput!
+  ): Program
+  updatePrograms(data: [ProgramUpdateArgs!]!): [Program]
+  deleteProgram(where: ProgramWhereUniqueInput!): Program
+  deletePrograms(where: [ProgramWhereUniqueInput!]!): [Program]
+  createInstrumentation(data: InstrumentationCreateInput!): Instrumentation
+  createInstrumentations(
+    data: [InstrumentationCreateInput!]!
+  ): [Instrumentation]
+  updateInstrumentation(
+    where: InstrumentationWhereUniqueInput!
+    data: InstrumentationUpdateInput!
+  ): Instrumentation
+  updateInstrumentations(data: [InstrumentationUpdateArgs!]!): [Instrumentation]
+  deleteInstrumentation(
+    where: InstrumentationWhereUniqueInput!
+  ): Instrumentation
+  deleteInstrumentations(
+    where: [InstrumentationWhereUniqueInput!]!
+  ): [Instrumentation]
+  createCollaboratorRole(data: CollaboratorRoleCreateInput!): CollaboratorRole
+  createCollaboratorRoles(
+    data: [CollaboratorRoleCreateInput!]!
+  ): [CollaboratorRole]
+  updateCollaboratorRole(
+    where: CollaboratorRoleWhereUniqueInput!
+    data: CollaboratorRoleUpdateInput!
+  ): CollaboratorRole
+  updateCollaboratorRoles(
+    data: [CollaboratorRoleUpdateArgs!]!
+  ): [CollaboratorRole]
+  deleteCollaboratorRole(
+    where: CollaboratorRoleWhereUniqueInput!
+  ): CollaboratorRole
+  deleteCollaboratorRoles(
+    where: [CollaboratorRoleWhereUniqueInput!]!
+  ): [CollaboratorRole]
+  createCollaborator(data: CollaboratorCreateInput!): Collaborator
+  createCollaborators(data: [CollaboratorCreateInput!]!): [Collaborator]
+  updateCollaborator(
+    where: CollaboratorWhereUniqueInput!
+    data: CollaboratorUpdateInput!
+  ): Collaborator
+  updateCollaborators(data: [CollaboratorUpdateArgs!]!): [Collaborator]
+  deleteCollaborator(where: CollaboratorWhereUniqueInput!): Collaborator
+  deleteCollaborators(where: [CollaboratorWhereUniqueInput!]!): [Collaborator]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -920,6 +1217,38 @@ type Query {
   ): [MissionStatement!]
   missionStatement(where: MissionStatementWhereUniqueInput!): MissionStatement
   missionStatementsCount(where: MissionStatementWhereInput! = {}): Int
+  programs(
+    where: ProgramWhereInput! = {}
+    orderBy: [ProgramOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Program!]
+  program(where: ProgramWhereUniqueInput!): Program
+  programsCount(where: ProgramWhereInput! = {}): Int
+  instrumentations(
+    where: InstrumentationWhereInput! = {}
+    orderBy: [InstrumentationOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Instrumentation!]
+  instrumentation(where: InstrumentationWhereUniqueInput!): Instrumentation
+  instrumentationsCount(where: InstrumentationWhereInput! = {}): Int
+  collaboratorRoles(
+    where: CollaboratorRoleWhereInput! = {}
+    orderBy: [CollaboratorRoleOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [CollaboratorRole!]
+  collaboratorRole(where: CollaboratorRoleWhereUniqueInput!): CollaboratorRole
+  collaboratorRolesCount(where: CollaboratorRoleWhereInput! = {}): Int
+  collaborators(
+    where: CollaboratorWhereInput! = {}
+    orderBy: [CollaboratorOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Collaborator!]
+  collaborator(where: CollaboratorWhereUniqueInput!): Collaborator
+  collaboratorsCount(where: CollaboratorWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }

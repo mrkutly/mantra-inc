@@ -18,5 +18,8 @@
     "keystone": "^4.2.1",
     "lodash": "^4.17.21",
     "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "prisma": "^4.5.0"
   }
 }
