@@ -2,6 +2,9 @@
   "name": "keystone-app",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "16.13.2"
+  },
   "scripts": {
     "dev": "keystone dev",
     "start": "keystone start",
