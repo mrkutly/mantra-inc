@@ -6,8 +6,9 @@ import { FullScreenCard } from './styles'
 import SectionHeading from './SectionHeading'
 import Concert from './Concert'
 import CalendarYears from './CalendarYears'
-import { Concert as IConcert } from '../types'
+import { Concert as IConcert, Group } from '../types'
 import { colorChange } from './styles/animations'
+import { GroupButtons } from './GroupButtons'
 
 
 export const SCHEDULE_FRAGMENT = graphql`
@@ -56,13 +57,18 @@ const descending = (a, b) => (a > b ? -1 : 1)
 
 const Calendar = () => {
 	const { api } = useStaticQuery<CalendarResult>(CALENDAR_QUERY)
-	const [group, setGroup] = useState<'mantra' | 'mantraYouth' | 'recap'>('mantra')
+	const [group, setGroup] = useState<Group>('mantra')
 	const grouped = useMemo(() => {
 		const groupedByYear = groupBy((x: IConcert) => String(new Date(x.dateFrom).getFullYear()))
 		return groupedByYear(api[group])
 	}, [group, api])
 	const thisYear = String(new Date(Date.now()).getFullYear())
 	const [year, setYear] = useState(thisYear)
+
+	const handleGroupSelection = (group: Group) => {
+		setGroup(group)
+		setYear(thisYear)
+	}
 
 	return (
 		<SectionStyles id="schedule">
@@ -71,21 +77,10 @@ const Calendar = () => {
 					<h1>Schedule</h1>
 				</SectionHeading>
 
-				<div className="group-buttons">
-					{(['mantra', 'mantraYouth', 'recap'] as const).map(groupName => (
-						<button
-							key={`${groupName}-button`}
-							type="button"
-							className={group === groupName ? 'active' : ''}
-							onClick={() => {
-								setGroup(groupName)
-								setYear(thisYear)
-							}}
-						>
-							{groupName}
-						</button>
-					))}
-				</div>
+				<GroupButtons
+					groups={[{ key: 'mantra' }, { key: 'mantraYouth', text: 'mantra youth' }, { key: 'recap' }]}
+					onSelectGroup={handleGroupSelection}
+					activeGroup={group} />
 
 				<div className="grid">
 					<CalendarYears
@@ -114,10 +109,6 @@ const SectionStyles = styled.section`
 	.grid {
 		display: grid;
 		grid-template-columns: 100px auto;
-	}
-
-	.group-buttons {
-		margin: 2rem 0;
 	}
 
 	button {
