@@ -7,8 +7,10 @@ import SectionHeading from '../../components/SectionHeading'
 import { ImageResult } from '../../components/About'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
+import { ProgramsList } from '../../components/ProgramList'
+import { ConcertProgram } from '../../types'
 
-const IMAGE_QUERY = graphql`
+const PAGE_QUERY = graphql`
 	query {
 		mantraYouth: file(relativePath: { eq: "mantra-youth-logo.png" }) {
 			childImageSharp {
@@ -17,15 +19,35 @@ const IMAGE_QUERY = graphql`
 				}
 			}
 		}
+
+		api {
+			programs(where: { group: { equals: "mantrayouth"}}) {
+				id
+				title
+				description
+				link
+				durationInMinutes
+				instrumentations {
+					instruments
+				}
+				collaborators {
+					name
+					role {
+						title
+					}
+				}
+			}
+		}
 	}
 `
 
-type Images = {
+type PageResult = {
 	mantraYouth: ImageResult
+	api: { programs: ConcertProgram[] }
 }
 
 const Contact = () => {
-	const { mantraYouth } = useStaticQuery<Images>(IMAGE_QUERY)
+	const { mantraYouth, api: { programs } } = useStaticQuery<PageResult>(PAGE_QUERY)
 
 	return (
 		<Layout>
@@ -64,6 +86,7 @@ const Contact = () => {
 								</p>
 							</div>
 						</Container>
+						<ProgramsList programs={programs} />
 					</FullScreenCard>
 				</section>
 			</main>
