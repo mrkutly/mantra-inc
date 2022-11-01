@@ -17,4 +17,4 @@ const configs = {
   }
 }
 
-export const Config = configs[Env.production] 
+export const Config = configs[process.env.NODE_ENV as Env ?? Env.production] 
