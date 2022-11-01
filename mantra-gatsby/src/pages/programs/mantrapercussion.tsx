@@ -7,25 +7,47 @@ import SectionHeading from '../../components/SectionHeading'
 import { ImageResult } from '../../components/About'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
+import { ConcertProgram } from '../../types'
+import { ProgramsList } from '../../components/ProgramList'
 
-const IMAGE_QUERY = graphql`
+const PAGE_QUERY = graphql`
 	query {
-		mantra: file(relativePath: { eq: "mantra-logo.png" }) {
+		mantraImage: file(relativePath: { eq: "mantra-logo.png" }) {
 			childImageSharp {
 				fluid {
 					...GatsbyImageSharpFluid
 				}
 			}
 		}
+
+		api {
+			programs(where: { group: { equals: "mantra"}}) {
+				id
+				title
+				description
+				link
+				durationInMinutes
+				instrumentations {
+					instruments
+				}
+				collaborators {
+					name
+					role {
+						title
+					}
+				}
+			}
+		}	
 	}
 `
 
-type Images = {
-	mantra: ImageResult
+type PageResult = {
+	mantraImage: ImageResult
+	api: { programs: ConcertProgram[] }
 }
 
 const Contact = () => {
-	const { mantra } = useStaticQuery<Images>(IMAGE_QUERY)
+	const { api: { programs }, mantraImage } = useStaticQuery<PageResult>(PAGE_QUERY)
 
 	return (
 		<Layout>
@@ -36,12 +58,12 @@ const Contact = () => {
 						<SectionHeading>
 							<h1>Programs - Mantra Percussion</h1>
 						</SectionHeading>
-						<Container>
-							<div className="program">
+						<GroupContainer>
+							<div className="group">
 								<h1>Mantra Percussion</h1>
 								<WhiteImageContainer width="400px">
 									<Image
-										fluid={mantra.childImageSharp.fluid}
+										fluid={mantraImage.childImageSharp.fluid}
 										style={{ filter: 'invert(1)' }}
 									/>
 								</WhiteImageContainer>
@@ -66,7 +88,8 @@ const Contact = () => {
 									from around the region.
 								</p>
 							</div>
-						</Container>
+						</GroupContainer>
+						<ProgramsList programs={programs} />
 					</FullScreenCard>
 				</section>
 			</main>
@@ -79,8 +102,8 @@ const WhiteImageContainer = styled(ImageContainer)`
 	padding: 20px;
 `
 
-const Container = styled.div`
-	div.program {
+const GroupContainer = styled.div`
+	div.group {
 		min-height: 300px;
 		margin: 2rem auto 7rem;
 		font-weight: 600;
@@ -91,5 +114,6 @@ const Container = styled.div`
 		}
 	}
 `
+
 
 export default Contact

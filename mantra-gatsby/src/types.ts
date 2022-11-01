@@ -55,3 +55,24 @@ export interface Video {
 }
 
 export type Group = 'mantra' | 'recap' | 'mantraYouth'
+
+export interface Instrumentation {
+	instruments: string
+}
+
+export interface Collaborator {
+	name: string
+	role: {
+		title: string
+	}
+}
+
+export interface ConcertProgram {
+	id: string
+	title: string
+	durationInMinutes: number
+	instrumentations: Instrumentation[]
+	description: string
+	collaborators: Collaborator[]
+	link: string
+}
