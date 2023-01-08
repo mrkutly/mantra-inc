@@ -42,7 +42,6 @@ export const ProgramSchema = readonlyList({
     collaborators: relationship({ ref: 'Collaborator', many: true }),
     link: text({
       validation: {
-        isRequired: true,
         match: urlMatch,
       }
     }),

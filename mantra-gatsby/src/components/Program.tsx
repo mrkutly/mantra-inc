@@ -32,7 +32,7 @@ export const Program = ({ program }: ProgramProps) => {
 
     <div className="description">{program.description}</div>
 
-    <Link href={program.link} rel="noopener noreferrer nofollow">Click here for information, audio, video, and more.</Link>
+    {program.link && <Link href={program.link} rel="noopener noreferrer nofollow">Click here for information, audio, video, and more.</Link>}
   </ProgramContainer>
 }
 
