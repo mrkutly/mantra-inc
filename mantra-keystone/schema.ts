@@ -6,8 +6,10 @@ import { UserSchema } from './schemas/User';
 import { VideoSchema } from './schemas/Video';
 import { MissionStatementSchema } from './schemas/MissionStatement'
 import { ProgramSchema, InstrumentationSchema, CollaboratorRoleSchema, CollaboratorSchema } from './schemas/Program';
+import { ImageSchema } from './schemas/Image';
 
 export const lists = {
+  Image: ImageSchema,
   User: UserSchema,
   Album: AlbumSchema,
   Article: ArticleSchema,

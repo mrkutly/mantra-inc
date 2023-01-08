@@ -12,6 +12,13 @@ generator client {
   output   = "node_modules/.prisma/client"
 }
 
+model Image {
+  id      String @id @default(uuid()) @postgresql.Uuid
+  title   String @default("")
+  altText String @default("")
+  image   Json?
+}
+
 model User {
   id       String @id @default(uuid()) @postgresql.Uuid
   name     String @default("")

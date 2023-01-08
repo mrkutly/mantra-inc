@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'
+dotenv.config();
+
 /*
 Welcome to Keystone! This file is what keystone uses to start the app.
 

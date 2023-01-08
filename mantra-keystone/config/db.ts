@@ -1,4 +1,5 @@
 import { BaseKeystoneTypeInfo, DatabaseConfig } from "@keystone-6/core/types";
+import { Environment } from "../environment";
 import { seedDb } from "../seeds";
 import { Env } from "../types";
 
@@ -13,7 +14,7 @@ export const DBConfig: Record<Env, DatabaseConfig<BaseKeystoneTypeInfo>> = {
   },
   production: {
     provider: 'postgresql' as const,
-    url: process.env.DATABASE_URL!,
+    url: Environment.databaseUrl!,
     enableLogging: true,
     useMigrations: true,
     onConnect: seedDb,

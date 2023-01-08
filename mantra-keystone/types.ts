@@ -15,3 +15,5 @@ export enum AlbumHost {
   Apple = 'apple',
   Spotify = 'spotify'
 }
+
+export type FirstParameter<T extends (...args: any[]) => any> = Parameters<T> extends [infer First, ...any] ? First : never;
