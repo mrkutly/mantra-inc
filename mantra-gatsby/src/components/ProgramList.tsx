@@ -20,5 +20,6 @@ const ListStyles = styled.ul`
 	list-style: square;
 	li {
 		padding-left: 2rem;
+    margin: 100px 0;
 	}
 `

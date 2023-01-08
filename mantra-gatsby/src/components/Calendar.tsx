@@ -62,12 +62,14 @@ const Calendar = () => {
 		const groupedByYear = groupBy((x: IConcert) => String(new Date(x.dateFrom).getFullYear()))
 		return groupedByYear(api[group])
 	}, [group, api])
+	const yearsDesc = useMemo(() => Object.keys(grouped).sort(descending), [grouped])
 	const thisYear = String(new Date(Date.now()).getFullYear())
-	const [year, setYear] = useState(thisYear)
+	const latestYear = yearsDesc[0] ?? thisYear;
+	const [year, setYear] = useState(latestYear);
 
 	const handleGroupSelection = (group: Group) => {
 		setGroup(group)
-		setYear(thisYear)
+		setYear(latestYear)
 	}
 
 	return (
@@ -86,7 +88,7 @@ const Calendar = () => {
 					<CalendarYears
 						active={year}
 						setYear={setYear}
-						options={Object.keys(grouped).sort(descending)}
+						options={yearsDesc}
 					/>
 					<div className="shows">
 						{grouped[year]

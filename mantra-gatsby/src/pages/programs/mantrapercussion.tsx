@@ -21,7 +21,7 @@ const PAGE_QUERY = graphql`
 		}
 
 		api {
-			programs(where: { group: { equals: "mantra"}}) {
+			programs(where: { group: { equals: "mantra"}}, orderBy: { createdAt: desc }) {
 				id
 				title
 				description
