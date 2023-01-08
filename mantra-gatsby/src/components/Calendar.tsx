@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import { groupBy } from 'lodash/fp'
@@ -69,8 +69,11 @@ const Calendar = () => {
 
 	const handleGroupSelection = (group: Group) => {
 		setGroup(group)
-		setYear(latestYear)
 	}
+
+	useEffect(() => {
+		setYear(latestYear)
+	}, [group])
 
 	return (
 		<SectionStyles id="schedule">
