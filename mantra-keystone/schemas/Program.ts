@@ -4,6 +4,8 @@ import {
   timestamp,
   integer,
 } from '@keystone-6/core/fields';
+import { Envar } from '../environment';
+import { Env } from '../types';
 
 import { groupSelect } from './helpers/fields';
 import { urlMatch } from './helpers/matchers';
@@ -42,7 +44,7 @@ export const ProgramSchema = readonlyList({
     collaborators: relationship({ ref: 'Collaborator', many: true }),
     link: text({
       validation: {
-        match: urlMatch,
+        match: Envar.nodeEnv === Env.production ? urlMatch : undefined,
       }
     }),
   },
