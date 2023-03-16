@@ -1,3 +1,4 @@
+import { Envar } from "../environment";
 import { Env } from "../types";
 import { DBConfig } from "./db";
 import { GQLConfig } from "./graphql";
@@ -17,4 +18,4 @@ const configs = {
   }
 }
 
-export const Config = configs[process.env.NODE_ENV as Env ?? Env.production] 
+export const Config = configs[Envar.nodeEnv ?? Env.production]

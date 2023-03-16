@@ -11,13 +11,14 @@ import { createAuth } from '@keystone-6/auth';
 
 // See https://keystonejs.com/docs/apis/session#session-api for the session docs
 import { statelessSessions } from '@keystone-6/core/session';
+import { Envar } from './environment';
 
-let sessionSecret = process.env.SESSION_SECRET;
+let sessionSecret = Envar.sessionSecret;
 
 // Here is a best practice! It's fine to not have provided a session secret in dev,
 // however it should always be there in production.
 if (!sessionSecret) {
-  if (process.env.NODE_ENV === 'production') {
+  if (Envar.nodeEnv === 'production') {
     throw new Error(
       'The SESSION_SECRET environment variable must be set in production'
     );
