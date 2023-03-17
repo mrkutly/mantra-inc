@@ -63,6 +63,36 @@ module.exports = {
 				isHash: false,
 			},
 		],
+		programLinks: [
+			{
+				id: 1,
+				display: `Mantra Percussion`,
+				href: `/programs/mantrapercussion`,
+				partial: false,
+				isHash: false,
+			},
+			{
+				id: 2,
+				display: `Recap`,
+				href: `/programs/recap`,
+				partial: false,
+				isHash: false,
+			},
+			{
+				id: 3,
+				display: `The Necessary Noise Festival`,
+				href: `/programs/nnf`,
+				partial: false,
+				isHash: false,
+			},
+			{
+				id: 4,
+				display: `Mantra Youth Percussion`,
+				href: `/programs/mantrayouth`,
+				partial: false,
+				isHash: false,
+			},
+		]
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
