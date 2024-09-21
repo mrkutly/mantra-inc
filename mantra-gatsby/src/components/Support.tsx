@@ -9,6 +9,7 @@ import { FullScreenCard } from './styles'
 
 type SupportImages = {
 	ditson: ImageResult
+	amphion: ImageResult
 	bac: ImageResult
 	cma: ImageResult
 	nmusa: ImageResult
@@ -19,6 +20,14 @@ type SupportImages = {
 export const SUPPORT_IMAGES_QUERY = graphql`
 	query {
 		ditson: file(relativePath: { eq: "ditson.jpeg" }) {
+			childImageSharp {
+				fluid {
+					...GatsbyImageSharpFluid
+				}
+			}
+		}
+
+		amphion: file(relativePath: { eq: "amphion.png" }) {
 			childImageSharp {
 				fluid {
 					...GatsbyImageSharpFluid
@@ -106,6 +115,11 @@ const Support = () => {
 						their generous support:
 					</p>
 					<ul>
+						<Supporter
+							fluid={images.amphion.childImageSharp.fluid}
+							text="Amphion Foundation"
+						/>
+						
 						<Supporter
 							fluid={images.nmusa.childImageSharp.fluid}
 							text="New Music USA"
