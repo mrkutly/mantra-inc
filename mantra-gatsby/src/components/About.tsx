@@ -99,38 +99,30 @@ const About = () => {
 						<Image fluid={data.bandImage.childImageSharp.fluid} />
 					</ImageContainer>
 					<p>
-						Mantra Percussion, Inc. is a future-focused organization committed to a lasting influence on percussion music through the{' '}
-						creation of new works by living composers and creators from across the social spectrum — establishing lasting relationships with our collaborators;{' '}
-						by developing equitable music communities through collaboration, support, and concert presenting; by mentoring new generations of diverse artists{' '}
-						to significantly reshape the classical music landscape; and by engaging audiences through immersive, evening-length events that convey a grander{' '}
-						artistic vision.
+						Mantra Percussion, Inc. is a future-focused, BIPOC-led organization committed to an indelible influence on percussion music and the classical music landscape through the creation of new works by living composers and creators from across the social spectrum. Our organization develops communities through collaboration and support, mentors new generations of diverse artists to reshape the classical music paradigm, and engages audiences through immersive, evening-length events that challenge the traditional classical music experience. We work toward this purposeful art-making process using an ethical, equitable framework, amplifying diverse voices — particularly from historically excluded communities. In doing so, we aim to build a future where our community can thrive, connecting more parts of society through determined artistic expression.
 					</p>
 
 					<p>
-
-						Since forming in 2009, Mantra Percussion&apos;s ensembles have been featured throughout North America, Europe and Asia, including BAM&apos;s Next Wave{' '}
-						Festival, the Bang on a Can Marathon, Sacrum Profanum Festival (Poland), Now Music Festival (South Korea), the GAIDA festival (Lithuania), Duke{' '}
-						Performances, National Public Radio, the Drogheda Festival (Ireland), the Ecstatic Music Festival, Mass MoCA and more. Over the past 14 years{' '}
-						we have commissioned and/or premiered over 100 new works for percussion ensemble.
+						Since forming in 2009, Mantra Percussion's ensembles have been featured throughout North America, Europe and Asia, including BAM's Next Wave Festival, the Bang on a Can Marathon, Sacrum Profanum Festival (Poland), Now Music Festival (South Korea), the GAIDA festival (Lithuania), Duke Performances, National Public Radio, the Drogheda Festival (Ireland), the Ecstatic Music Festival, Mass MoCA and more. Over the past 15 years we have commissioned and/or premiered over 100 new works for percussion ensemble.
 					</p>
 
 					<p>
-						Across our organization we&apos;ve developed 4 distinct creative outlets.{' '}
+						Across our organization we&apos;ve developed 4 distinct creative outlets.
 					</p>
 					<p>
 						<ProgramLink to={mantraLink.href}>{mantraLink.display}</ProgramLink>:{' '}
 						Our flagship sextet collaborates with artists from diverse{' '}
-						backgrounds and redefines the landscape of percussion concerts and events.{' '}
+						backgrounds and redefines the landscape of percussion concerts and events.
 					</p>
 					<p>
 						<ProgramLink to={recapLink.href}>{recapLink.display}</ProgramLink>:{' '}
 						a professional percussion quartet of BIPOC women, all alumni of Mantra Youth{' '}
-						Percussion. Recap reevaluates the white, male-dominated world of percussion amplifying a message of representation, community, and equity.{' '}
+						Percussion. Recap reevaluates the white, male-dominated world of percussion amplifying a message of representation, community, and equity.
 					</p>
 					<p>
 						<ProgramLink to={nnfLink.href}>{nnfLink.display}</ProgramLink>:{' '}
 						our annual music festival is the largest percussion event on the east coast, bringing together scholastic, collegiate, and professional musicians to share a wide spectrum{' '}
-						of styles, while promoting percussion to the greater community.{' '}
+						of styles, while promoting percussion to the greater community.
 					</p>
 					<p>
 						<ProgramLink to={mypLink.href}>{mypLink.display}</ProgramLink>:{' '}
