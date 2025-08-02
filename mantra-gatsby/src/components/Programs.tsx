@@ -1,64 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
-import Image, { FixedObject } from 'gatsby-image'
+import { StaticImage as Image } from 'gatsby-plugin-image'
 import { FullScreenCard, PageLink } from './styles'
 import SectionHeading from './SectionHeading'
 
-const IMAGES_QUERY = graphql`
-	query {
-		mantra: file(relativePath: { eq: "mantra-logo.png" }) {
-			childImageSharp {
-				fixed(width: 260) {
-					...GatsbyImageSharpFixed
-				}
-			}
-		}
-
-		mantraYouth: file(relativePath: { eq: "mantra-youth-logo.png" }) {
-			childImageSharp {
-				fixed(width: 260) {
-					...GatsbyImageSharpFixed
-				}
-			}
-		}
-
-		nnf: file(relativePath: { eq: "nnf-logo.png" }) {
-			childImageSharp {
-				fixed(width: 260) {
-					...GatsbyImageSharpFixed
-				}
-			}
-		}
-
-		recap: file(relativePath: { eq: "recap-logo.jpg" }) {
-			childImageSharp {
-				fixed(width: 260) {
-					...GatsbyImageSharpFixed
-				}
-			}
-		}
-	}
-`
-
-type FixedImageResult = {
-	childImageSharp: {
-		fixed: FixedObject
-	}
-}
-
-type Images = {
-	mantra: FixedImageResult
-	mantraYouth: FixedImageResult
-	nnf: FixedImageResult
-	recap: FixedImageResult
-}
 
 const Programs = () => {
-	const { mantra, mantraYouth, nnf, recap } = useStaticQuery<Images>(
-		IMAGES_QUERY
-	)
-
 	return (
 		<section id="programs">
 			<FullScreenCard>
@@ -72,7 +19,10 @@ const Programs = () => {
 							<WhiteImageContainer>
 								<div className="centered">
 									<Image
-										fixed={mantra.childImageSharp.fixed}
+										alt="mantra logo"
+										layout="fixed"
+										width={260}
+										src="../images/mantra-logo.png"
 										style={{ filter: 'invert(1)' }}
 									/>
 								</div>
@@ -85,7 +35,12 @@ const Programs = () => {
 							Recap
 							<WhiteImageContainer>
 								<div className="centered">
-									<Image fixed={recap.childImageSharp.fixed} />
+									<Image
+										alt="recap logo"
+										layout="fixed"
+										width={260}
+										src="../images/recap-logo.jpg"
+									/>
 								</div>
 							</WhiteImageContainer>
 						</SectionLink>
@@ -96,7 +51,12 @@ const Programs = () => {
 							Mantra Youth Percussion
 							<WhiteImageContainer>
 								<div className="centered">
-									<Image fixed={mantraYouth.childImageSharp.fixed} />
+									<Image
+										alt="mantra youth logo"
+										layout="fixed"
+										width={260}
+										src="../images/mantra-youth-logo.png"
+									/>
 								</div>
 							</WhiteImageContainer>
 						</SectionLink>
@@ -107,7 +67,12 @@ const Programs = () => {
 							Necessary Noise Festival
 							<WhiteImageContainer>
 								<div className="centered">
-									<Image fixed={nnf.childImageSharp.fixed} />
+									<Image
+										alt="necessary noise festival logo"
+										layout="fixed"
+										width={260}
+										src="../images/nnf-logo.png"
+									/>
 								</div>
 							</WhiteImageContainer>
 						</SectionLink>

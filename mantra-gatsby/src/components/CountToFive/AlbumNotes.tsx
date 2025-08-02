@@ -1,12 +1,12 @@
 import React from 'react'
-import Image, { FluidObject } from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { ImageContainer } from '../styles'
 
-const AlbumNotes = ({ image }: { image: FluidObject | FluidObject[] }) => (
+const AlbumNotes = () => (
 	<section id="album-notes">
 		<h2>Album Notes</h2>
 		<ImageContainer width="400px">
-			<Image fluid={image} alt="count to five album cover" />
+			<StaticImage layout="fullWidth" src="../../images/count-to-five.jpg" alt="count to five album cover" />
 		</ImageContainer>
 
 		<p>

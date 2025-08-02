@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import Image, { FluidObject } from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import SectionHeading from './SectionHeading'
 import { ImageContainer, FullScreenCard, PageLink } from './styles'
@@ -17,15 +17,6 @@ const ABOUT_QUERY = graphql`
 				}
 			}
 		}
-
-		bandImage: file(relativePath: { eq: "timber-cool.jpg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-
 		api {
 			admin: teams(where: { title: { equals: "Administration" }}) {
 				title
@@ -50,12 +41,6 @@ const ABOUT_QUERY = graphql`
 	}
 `
 
-export interface ImageResult {
-	childImageSharp: {
-		fluid: FluidObject
-	}
-}
-
 type TeamMember = {
 	name: string
 	roles: { title: string }[]
@@ -67,7 +52,6 @@ type Team = {
 }
 
 type Bios = {
-	bandImage: ImageResult
 	site: {
 		siteMetadata: {
 			programLinks: { display: string; href: string; id: number; }[]
@@ -96,7 +80,7 @@ const About = () => {
 				<ContentStyles>
 					<h2>Mantra Percussion Inc.</h2>
 					<ImageContainer width="400px">
-						<Image fluid={data.bandImage.childImageSharp.fluid} />
+						<StaticImage layout="fullWidth" src="../images/timber-cool.jpg" alt=" mantra playing live" />
 					</ImageContainer>
 					<p>
 						Mantra Percussion, Inc. is a future-focused, BIPOC-led organization committed to an indelible influence on percussion music and the classical music landscape through the creation of new works by living composers and creators from across the social spectrum. Our organization develops communities through collaboration and support, mentors new generations of diverse artists to reshape the classical music paradigm, and engages audiences through immersive, evening-length events that challenge the traditional classical music experience. We work toward this purposeful art-making process using an ethical, equitable framework, amplifying diverse voices — particularly from historically excluded communities. In doing so, we aim to build a future where our community can thrive, connecting more parts of society through determined artistic expression.

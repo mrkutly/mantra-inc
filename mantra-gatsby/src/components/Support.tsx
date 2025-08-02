@@ -1,93 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
-import Image, { FluidObject } from 'gatsby-image'
-import { ImageResult } from './About'
+import { StaticImage } from 'gatsby-plugin-image'
 import SectionHeading from './SectionHeading'
 import DonationButton from './DonationButton'
 import { FullScreenCard } from './styles'
 
-type SupportImages = {
-	ditson: ImageResult
-	amphion: ImageResult
-	bac: ImageResult
-	cma: ImageResult
-	nmusa: ImageResult
-	nps: ImageResult
-	qac: ImageResult
-}
-
-export const SUPPORT_IMAGES_QUERY = graphql`
-	query {
-		ditson: file(relativePath: { eq: "ditson.jpeg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-
-		amphion: file(relativePath: { eq: "amphion.png" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-
-		bac: file(relativePath: { eq: "bac.jpeg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-
-		cma: file(relativePath: { eq: "cma.png" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-
-		nmusa: file(relativePath: { eq: "nmusa.jpeg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-
-		nps: file(relativePath: { eq: "nps.png" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-
-		qac: file(relativePath: { eq: "qac.png" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-	}
-`
-
-const Supporter = ({ fluid, text }: { fluid: FluidObject; text: string }) => (
-	<li>
-		<div className="image-container">
-			<Image fluid={fluid} alt={text} />
-		</div>
-		<p>{text}</p>
-	</li>
-)
-
 const Support = () => {
-	const images = useStaticQuery<SupportImages>(SUPPORT_IMAGES_QUERY)
 	return (
 		<section id="support" style={{ fontWeight: 600 }}>
 			<FullScreenCard>
@@ -115,40 +33,65 @@ const Support = () => {
 						their generous support:
 					</p>
 					<ul>
-						<Supporter
-							fluid={images.amphion.childImageSharp.fluid}
-							text="Amphion Foundation"
-						/>
-						
-						<Supporter
-							fluid={images.nmusa.childImageSharp.fluid}
-							text="New Music USA"
-						/>
+						<li>
+							<div className="image-container">
+								<StaticImage
+									layout="fullWidth" src="../images/amphion.png" alt="amphion foundation" />
+							</div>
+							<p>Amphion Foundation</p>
+						</li>
 
-						<Supporter
-							fluid={images.cma.childImageSharp.fluid}
-							text="Chamber Music America"
-						/>
+						<li>
+							<div className="image-container">
+								<StaticImage
+									layout="fullWidth" src="../images/nmusa.jpeg" alt="new music usa" />
+							</div>
+							<p>New Music USA</p>
+						</li>
 
-						<Supporter
-							fluid={images.bac.childImageSharp.fluid}
-							text="Brooklyn Arts Council"
-						/>
+						<li>
+							<div className="image-container">
+								<StaticImage
+									layout="fullWidth" src="../images/cma.png" alt="Chamber Music America" />
+							</div>
+							<p>Chamber Music America</p>
+						</li>
 
-						<Supporter
-							fluid={images.qac.childImageSharp.fluid}
-							text="Queens Council on the Arts"
-						/>
+						<li>
+							<div className="image-container">
+								<StaticImage
+									layout="fullWidth" src="../images/bac.jpeg" alt="Brooklyn Arts Council" />
+							</div>
+							<p>Brooklyn Arts Council</p>
+						</li>
 
-						<Supporter
-							fluid={images.ditson.childImageSharp.fluid}
-							text="The Alice M. Ditson Fund"
-						/>
+						<li>
+							<div className="image-container">
+								<StaticImage
+									layout="fullWidth" src="../images/qac.png" alt="Queens Council on the Arts" />
+							</div>
+							<p>Queens Council on the Arts</p>
+						</li>
 
-						<Supporter
-							fluid={images.nps.childImageSharp.fluid}
-							text="National Parks Service"
-						/>
+
+						<li>
+							<div className="image-container">
+								<StaticImage
+									layout="fullWidth" src="../images/ditson.jpeg" alt="The Alice M. Ditson Fund" />
+							</div>
+							<p>The Alice M. Ditson Fund</p>
+						</li>
+
+
+						<li>
+							<div className="image-container">
+								<StaticImage
+									layout="fullWidth" src="../images/nps.png" alt="National Parks Service" />
+							</div>
+							<p>National Parks Service</p>
+						</li>
+
+
 					</ul>
 				</ContentStyles>
 			</FullScreenCard>

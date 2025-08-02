@@ -1,12 +1,12 @@
 import React from 'react'
-import Image, { FluidObject } from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { ImageContainer } from '../styles'
 
-const RecapBio = ({ image }: { image: FluidObject | FluidObject[] }) => (
+const RecapBio = () => (
 	<section id="recap-bio">
 		<h2>Recap</h2>
 		<ImageContainer width="400px">
-			<Image fluid={image} alt="members of recap" />
+			<StaticImage layout="fullWidth" src="../../images/recap.jpg" alt="members of recap" />
 		</ImageContainer>
 		<p>
 			Recap is a new percussion quartet from a new generation of musicians

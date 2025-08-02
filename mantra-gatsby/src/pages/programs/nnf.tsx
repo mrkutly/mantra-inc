@@ -1,32 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
-import Image from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { FullScreenCard, ImageContainer } from '../../components/styles'
 import SectionHeading from '../../components/SectionHeading'
-import { ImageResult } from '../../components/About'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 
-const IMAGE_QUERY = graphql`
-	query {
-		nnf: file(relativePath: { eq: "nnf-logo.png" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-	}
-`
-
-type Images = {
-  nnf: ImageResult
-}
-
 const Contact = () => {
-  const { nnf } = useStaticQuery<Images>(IMAGE_QUERY)
-
   return (
     <Layout>
       <SEO title="Necessary Noise Festival" />
@@ -40,7 +20,7 @@ const Contact = () => {
               <div className="program">
                 <h1>Necessary Noise Festival</h1>
                 <WhiteImageContainer width="400px">
-                  <Image fluid={nnf.childImageSharp.fluid} />
+                  <StaticImage layout="fullWidth" alt="necessary noise festival logo" src="../../images/nnf-logo.png" />
                 </WhiteImageContainer>
                 <p>
                   An annual 3-day music festival of workshops, competitions,

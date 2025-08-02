@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import Image from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { FullScreenCard, ImageContainer } from '../../components/styles'
 import SectionHeading from '../../components/SectionHeading'
-import { ImageResult } from '../../components/About'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import { ConcertProgram } from '../../types'
@@ -12,14 +11,6 @@ import { ProgramsList } from '../../components/ProgramList'
 
 const PAGE_QUERY = graphql`
 	query {
-		mantraImage: file(relativePath: { eq: "mantra-logo.png" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-
 		api {
 			programs(where: { group: { equals: "mantra"}}, orderBy: { createdAt: desc }) {
 				id
@@ -42,12 +33,11 @@ const PAGE_QUERY = graphql`
 `
 
 type PageResult = {
-	mantraImage: ImageResult
 	api: { programs: ConcertProgram[] }
 }
 
 const Contact = () => {
-	const { api: { programs }, mantraImage } = useStaticQuery<PageResult>(PAGE_QUERY)
+	const { api: { programs } } = useStaticQuery<PageResult>(PAGE_QUERY)
 
 	return (
 		<Layout>
@@ -62,9 +52,10 @@ const Contact = () => {
 							<div className="group">
 								<h1>Mantra Percussion</h1>
 								<WhiteImageContainer width="400px">
-									<Image
-										fluid={mantraImage.childImageSharp.fluid}
+									<StaticImage
+										src="../../images/mantra-logo.png"
 										style={{ filter: 'invert(1)' }}
+										alt="mantra logo"
 									/>
 								</WhiteImageContainer>
 								<p>

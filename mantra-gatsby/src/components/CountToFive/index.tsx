@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { FullScreenCard, Link } from '../styles'
 import SectionHeading from '../SectionHeading'
 import LinerCredits from './LinerCredits'
-import { ImageResult } from '../About'
 import TrackList from './TrackList'
 import AlbumNotes from './AlbumNotes'
 import RecapBio from './RecapBio'
@@ -23,32 +22,8 @@ const ContentStyles = styled.div`
 	}
 `
 
-const IMAGE_QUERY = graphql`
-	query {
-		recap: file(relativePath: { eq: "recap.jpg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-		countToFive: file(relativePath: { eq: "count-to-five.jpg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-	}
-`
-
-interface ImageQueryData {
-	recap: ImageResult
-	countToFive: ImageResult
-}
 
 const CountToFive = () => {
-	const data = useStaticQuery<ImageQueryData>(IMAGE_QUERY)
 	return (
 		<section id="count-to-five">
 			<FullScreenCard>
@@ -62,12 +37,12 @@ const CountToFive = () => {
 					>
 						Out on Innova Records
 					</Link>
-					<AlbumNotes image={data.countToFive.childImageSharp.fluid} />
+					<AlbumNotes />
 					<br />
 					<br />
 					<br />
 					<br />
-					<RecapBio image={data.recap.childImageSharp.fluid} />
+					<RecapBio />
 
 					<section id="album-notes">
 						<h2>Album Info & Credits</h2>

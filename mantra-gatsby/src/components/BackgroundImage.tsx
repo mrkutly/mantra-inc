@@ -2,27 +2,13 @@
 /* eslint-disable lines-between-class-members */
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
-import { ImageResult } from './About'
+import { StaticImage } from 'gatsby-plugin-image'
 
-export const LOGO_QUERY = graphql`
-	query {
-		logo: file(relativePath: { eq: "mantra-logo.png" }) {
-			childImageSharp {
-				fluid(maxWidth: 1200) {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-	}
-`
 
 const BackgroudImage = () => {
-	const { logo } = useStaticQuery<{ logo: ImageResult }>(LOGO_QUERY)
 	return (
 		<BackgroundStyles>
-			<Image fluid={logo.childImageSharp.fluid} />
+			<StaticImage layout="fullWidth" alt="mantra logo" src="../images/mantra-logo.png" />
 		</BackgroundStyles>
 	)
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import Image from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import {
 	FullScreenCard,
 	ImageContainer,
@@ -9,21 +9,12 @@ import {
 } from '../../../components/styles'
 import { ConcertProgram } from '../../../types'
 import SectionHeading from '../../../components/SectionHeading'
-import { ImageResult } from '../../../components/About'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
 import { ProgramsList } from '../../../components/ProgramList'
 
 const QUERY = graphql`
 	query {
-		recap: file(relativePath: { eq: "recap-flags.jpg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
-		
 		api {
 			programs(where: { group: { equals: "recap"}}) {
 				id
@@ -46,12 +37,11 @@ const QUERY = graphql`
 `
 
 type Result = {
-	recap: ImageResult
 	api: { programs: ConcertProgram[] }
 }
 
 const Contact = () => {
-	const { recap, api: { programs } } = useStaticQuery<Result>(QUERY)
+	const { api: { programs } } = useStaticQuery<Result>(QUERY)
 
 	return (
 		<Layout>
@@ -66,7 +56,7 @@ const Contact = () => {
 							<div className="program">
 								<h1>Recap</h1>
 								<WhiteImageContainer width="600px">
-									<Image fluid={recap.childImageSharp.fluid} />
+									<StaticImage layout="fixed" width={600} src="../../../images/recap-flags.jpg" alt="recap band with national flags" />
 								</WhiteImageContainer>
 								<h2>
 									<PageLink

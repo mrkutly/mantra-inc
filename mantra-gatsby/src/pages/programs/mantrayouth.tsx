@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import Image from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { FullScreenCard, ImageContainer } from '../../components/styles'
 import SectionHeading from '../../components/SectionHeading'
-import { ImageResult } from '../../components/About'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import { ProgramsList } from '../../components/ProgramList'
@@ -12,13 +11,6 @@ import { ConcertProgram } from '../../types'
 
 const PAGE_QUERY = graphql`
 	query {
-		mantraYouth: file(relativePath: { eq: "mantra-youth-logo.png" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
-		}
 
 		api {
 			programs(where: { group: { equals: "mantrayouth"}}) {
@@ -42,12 +34,11 @@ const PAGE_QUERY = graphql`
 `
 
 type PageResult = {
-	mantraYouth: ImageResult
 	api: { programs: ConcertProgram[] }
 }
 
 const Contact = () => {
-	const { mantraYouth, api: { programs } } = useStaticQuery<PageResult>(PAGE_QUERY)
+	const { api: { programs } } = useStaticQuery<PageResult>(PAGE_QUERY)
 
 	return (
 		<Layout>
@@ -62,7 +53,7 @@ const Contact = () => {
 							<div className="program">
 								<h1>Mantra Youth Percussion</h1>
 								<WhiteImageContainer width="400px">
-									<Image fluid={mantraYouth.childImageSharp.fluid} />
+									<StaticImage layout="fullWidth" alt="mantra youth logo" src="../../images/mantra-youth-logo.png" />
 								</WhiteImageContainer>
 								<p>
 									Established in 2014, our tuition-free youth ensemble offers
