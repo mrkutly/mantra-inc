@@ -1,23 +1,22 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
-import { groupBy } from 'lodash/fp'
-import { FullScreenCard } from './styles'
-import SectionHeading from './SectionHeading'
-import Concert from './Concert'
-import CalendarYears from './CalendarYears'
-import { Concert as IConcert, Group } from '../types'
-import { colorChange } from './styles/animations'
-import { GroupButtons } from './GroupButtons'
-
+import React, { useEffect, useMemo, useState } from "react"
+import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
+import { groupBy, sortBy } from "lodash/fp"
+import { FullScreenCard } from "./styles"
+import SectionHeading from "./SectionHeading"
+import Concert from "./Concert"
+import CalendarYears from "./CalendarYears"
+import { Concert as IConcert, Group } from "../types"
+import { colorChange } from "./styles/animations"
+import { GroupButtons } from "./GroupButtons"
 
 export const SCHEDULE_FRAGMENT = graphql`
 	fragment Schedule on API_Concert {
-		dateFrom 
-		dateTo 
+		dateFrom
+		dateTo
 		location {
-			venue 
-			city 
+			venue
+			city
 			support
 		}
 		program {
@@ -27,7 +26,6 @@ export const SCHEDULE_FRAGMENT = graphql`
 		}
 	}
 `
-
 
 export const CALENDAR_QUERY = graphql`
 	query {
@@ -53,19 +51,25 @@ interface CalendarResult {
 	}
 }
 
-const descending = (a, b) => (a > b ? -1 : 1)
+const descending = (a: string, b: string) => (a > b ? -1 : 1)
 
 const Calendar = () => {
 	const { api } = useStaticQuery<CalendarResult>(CALENDAR_QUERY)
-	const [group, setGroup] = useState<Group>('mantra')
+	const [group, setGroup] = useState<Group>("mantra")
 	const grouped = useMemo(() => {
-		const groupedByYear = groupBy((x: IConcert) => String(new Date(x.dateFrom).getFullYear()))
+		const groupedByYear = groupBy((x: IConcert) =>
+			String(new Date(x.dateFrom).getFullYear())
+		)
 		return groupedByYear(api[group])
 	}, [group, api])
-	const yearsDesc = useMemo(() => Object.keys(grouped).sort(descending), [grouped])
+	const sortConcerts = sortBy((a: IConcert) => new Date(a.dateFrom).getTime())
+	const yearsDesc = useMemo(
+		() => Object.keys(grouped).sort(descending),
+		[grouped]
+	)
 	const thisYear = String(new Date(Date.now()).getFullYear())
-	const latestYear = yearsDesc[0] ?? thisYear;
-	const [year, setYear] = useState(latestYear);
+	const latestYear = yearsDesc[0] ?? thisYear
+	const [year, setYear] = useState(latestYear)
 
 	const handleGroupSelection = (group: Group) => {
 		setGroup(group)
@@ -83,22 +87,25 @@ const Calendar = () => {
 				</SectionHeading>
 
 				<GroupButtons
-					groups={[{ key: 'mantra' }, { key: 'mantraYouth', text: 'mantra youth' }, { key: 'recap' }]}
+					groups={[
+						{ key: "mantra" },
+						{ key: "mantraYouth", text: "mantra youth" },
+						{ key: "recap" },
+					]}
 					onSelectGroup={handleGroupSelection}
-					activeGroup={group} />
+					activeGroup={group}
+				/>
 
 				<div className="grid">
-					<CalendarYears
-						active={year}
-						setYear={setYear}
-						options={yearsDesc}
-					/>
+					<CalendarYears active={year} setYear={setYear} options={yearsDesc} />
 					<div className="shows">
 						{grouped[year]
-							? grouped[year].map(show => (
-								<Concert concert={show} key={JSON.stringify(show)} />
-							))
-							: 'Nothing on the books for this year yet. Come back later.'}
+							? sortConcerts(grouped[year])
+									.reverse()
+									.map((show) => (
+										<Concert concert={show} key={JSON.stringify(show)} />
+									))
+							: "Nothing on the books for this year yet. Come back later."}
 					</div>
 				</div>
 			</FullScreenCard>
@@ -124,7 +131,7 @@ const SectionStyles = styled.section`
 		border: none;
 		font-weight: 600;
 		font-size: 2.5rem;
-		font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+		font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
 
 		&.active {
 			color: var(--lightblue);
