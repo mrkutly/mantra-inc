@@ -8,7 +8,13 @@ interface LazyFrameProps extends HTMLProps<HTMLIFrameElement> {
 const LazyIFrame: React.FC<LazyFrameProps> = ({ children, src, ...rest }) => {
 	useLazyIframe()
 	return (
-		<iframe loading="lazy" data-src={src} {...rest} className="lazy-loaded">
+		<iframe
+			loading="lazy"
+			data-src={src}
+			{...rest}
+			className="lazy-loaded"
+			referrerPolicy="strict-origin-when-cross-origin"
+		>
 			{children}
 		</iframe>
 	)
